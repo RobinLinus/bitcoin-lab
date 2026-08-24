@@ -1,0 +1,44 @@
+{
+  "abstract": "Babylon and Aegis are partnering to bring fixed-rate credit to native Bitcoin-backed borrowing. The planned product will combine Babylon Trustless Bitcoin Vaults, Aave v4 and Aegis\u2019 fixed-rate lending infrastructure. The solution is expected to be available in Q4 2026, subject to development and testing.",
+  "authors": [
+    "Babylon Labs research"
+  ],
+  "bitcoin_topics": [
+    "Bitcoin-staking",
+    "Bitcoin-vaults",
+    "finality"
+  ],
+  "canonical_url": "https://babylonlabs.io/blog/babylon-and-aegis-partner-to-bring-fixed-rate-borrowing-to-bitcoin-holders",
+  "collection": "babylon",
+  "content_file": "babylon-babylon-and-aegis-partner-to-bring-fixed-rate-borrowing-to-bit-b2555bf7d5.md",
+  "id": "babylon-babylon-and-aegis-partner-to-bring-fixed-rate-borrowing-to-bit-b2555bf7d5",
+  "license": "Public papers and articles remain copyrighted by Babylon Labs or named authors unless an item states a license. No redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public papers and articles remain copyrighted by Babylon Labs or named authors unless an item states a license. No redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "text/html",
+    "fetched_url": "https://babylonlabs.io/blog/babylon-and-aegis-partner-to-bring-fixed-rate-borrowing-to-bitcoin-holders",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/babylon/babylon-babylon-and-aegis-partner-to-bring-fixed-rate-borrowing-to-bit-b2555bf7d5.html",
+    "retrieved_at": "2026-08-24T21:53:18Z",
+    "sha256": "fa9344b3085ad1da86285069faf942824a407f89d21b57e68296ab9686f03d65"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/babylon.json",
+  "source_type": "article",
+  "tags": [
+    "babylon-labs",
+    "bitcoin-research",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Babylon and Aegis Partner to Bring Fixed-Rate Borrowing to Bitcoin Holders"
+}

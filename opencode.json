@@ -1,0 +1,28 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "bitcoin-researcher",
+  "instructions": ["docs/RESEARCH_WORKFLOW.md"],
+  "permission": {
+    "bitcoin_lab_*": "allow",
+    "edit": "ask",
+    "write": "ask",
+    "bash": "ask"
+  },
+  "agent": {
+    "bitcoin-researcher": {
+      "description": "Plans and conducts citation-grounded Bitcoin research with the local lab tools",
+      "mode": "primary",
+      "prompt": "{file:./.opencode/prompts/researcher.txt}",
+      "permission": {
+        "bitcoin_lab_*": "allow",
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "deny",
+        "write": "deny",
+        "bash": "ask"
+      }
+    }
+  }
+}
+

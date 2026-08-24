@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitcoin-research-lab.local/schemas/document-metadata.schema.json",
+  "title": "Bitcoin Research Lab document metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "title",
+    "authors",
+    "published_at",
+    "source_type",
+    "collection",
+    "canonical_url",
+    "content_file",
+    "license",
+    "retrieved_at",
+    "abstract",
+    "tags",
+    "bitcoin_topics",
+    "source_manifest",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"},
+    "title": {"type": "string", "minLength": 1},
+    "authors": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+    "published_at": {"type": "string", "format": "date"},
+    "source_type": {"enum": ["paper", "article", "mailing-list-thread", "source-code"]},
+    "collection": {
+      "enum": [
+        "papers",
+        "delving-bitcoin",
+        "mailing-lists",
+        "robinlinus",
+        "fairgate",
+        "alpen",
+        "babylon",
+        "bitcoin-scripts",
+        "bitvm-opcodes",
+        "robinlinus-gists",
+        "citrea-docs"
+      ]
+    },
+    "canonical_url": {"type": "string", "format": "uri"},
+    "content_file": {"type": "string", "pattern": "^[^/]+\\.md$"},
+    "license": {"type": "string", "minLength": 1},
+    "retrieved_at": {"type": "string", "format": "date"},
+    "abstract": {"type": "string", "minLength": 1},
+    "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "bitcoin_topics": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "source_manifest": {"type": "string", "pattern": "^manifests/.+\\.json$"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content_kind", "is_sample", "notes"],
+      "properties": {
+        "content_kind": {"enum": ["source-text", "curated-summary", "synthetic-fixture"]},
+        "is_sample": {"type": "boolean"},
+        "notes": {"type": "string"},
+        "source_license": {"type": "string"}
+      }
+    },
+    "retrieval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "retrieved_at", "sha256", "fetcher_version"],
+      "properties": {
+        "method": {"enum": ["public-http", "public-api", "public-git"]},
+        "fetched_url": {"type": "string", "format": "uri"},
+        "repository": {"type": "string", "format": "uri"},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "revision": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "retrieved_at": {"type": "string", "format": "date-time"},
+        "http_status": {"type": "integer"},
+        "content_type": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "raw_file": {"type": "string", "minLength": 1},
+        "fetcher_version": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

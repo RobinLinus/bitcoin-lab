@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "id": "bitcoin-research-papers",
+  "collection": "papers",
+  "source_name": "Bitcoin research papers",
+  "homepage": "https://bitcoin.org/bitcoin.pdf",
+  "description": "Catalog entries for primary Bitcoin papers. The first release stores a short original research note and upstream metadata, not a mirrored paper corpus.",
+  "ingestion": {
+    "mode": "planned-adapter",
+    "status": "sample-only",
+    "discovery_urls": ["https://bitcoin.org/bitcoin.pdf"],
+    "expected_formats": ["application/pdf", "text/html"],
+    "notes": "Future ingestion should fetch only explicitly approved items, retain source checksums, extract text, and attach license/provenance metadata."
+  },
+  "rights": {
+    "policy": "Do not mirror source text unless its license permits it. Curated local summaries must identify themselves and their own license."
+  },
+  "entries": [
+    {
+      "id": "nakamoto-2008-bitcoin",
+      "canonical_url": "https://bitcoin.org/bitcoin.pdf",
+      "local_metadata_file": "documents/papers/nakamoto-2008-bitcoin.metadata.json",
+      "enabled": true
+    }
+  ]
+}
+

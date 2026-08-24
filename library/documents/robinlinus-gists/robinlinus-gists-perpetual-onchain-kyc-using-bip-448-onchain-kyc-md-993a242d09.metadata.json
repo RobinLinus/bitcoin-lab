@@ -1,0 +1,47 @@
+{
+  "abstract": "Perpetual Onchain KYC Using BIP 448",
+  "authors": [
+    "RobinLinus"
+  ],
+  "bitcoin_topics": [
+    "Bitcoin",
+    "cryptography",
+    "prototypes"
+  ],
+  "canonical_url": "https://gist.github.com/RobinLinus/e0876dba90f9755103c05ad2bc9b4ee6#file-onchain-kyc-md",
+  "collection": "robinlinus-gists",
+  "content_file": "robinlinus-gists-perpetual-onchain-kyc-using-bip-448-onchain-kyc-md-993a242d09.md",
+  "id": "robinlinus-gists-perpetual-onchain-kyc-using-bip-448-onchain-kyc-md-993a242d09",
+  "license": "Public gists have no implied open-source license. Preserve author, canonical gist URL, revision, and filename; no redistribution license is asserted unless a gist states one.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public gists have no implied open-source license. Preserve author, canonical gist URL, revision, and filename; no redistribution license is asserted unless a gist states one."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "text/markdown",
+    "fetched_url": "https://api.github.com/gists/e0876dba90f9755103c05ad2bc9b4ee6",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-api",
+    "path": "onchain-kyc.md",
+    "raw_file": "raw/robinlinus-gists/robinlinus-gists-perpetual-onchain-kyc-using-bip-448-onchain-kyc-md-993a242d09.md",
+    "retrieved_at": "2026-08-24T21:53:25Z",
+    "revision": "671cef18a01b9f804487fd42ccf9aae0e8caa728",
+    "sha256": "557549abe8860d0417214989ce95c795f6e19a4fd8863b79db5404e4c0c46c7e"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/robinlinus-gists.json",
+  "source_type": "source-code",
+  "tags": [
+    "robin-linus",
+    "github-gist",
+    "source-code",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Perpetual Onchain KYC Using BIP 448 / onchain-kyc.md"
+}

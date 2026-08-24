@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitcoin-research-lab.local/schemas/source-manifest.schema.json",
+  "title": "Bitcoin Research Lab source manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "collection", "source_name", "homepage", "description", "ingestion", "rights", "entries"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$"},
+    "collection": {
+      "enum": [
+        "papers",
+        "delving-bitcoin",
+        "mailing-lists",
+        "robinlinus",
+        "fairgate",
+        "alpen",
+        "babylon",
+        "bitcoin-scripts",
+        "bitvm-opcodes",
+        "robinlinus-gists",
+        "citrea-docs"
+      ]
+    },
+    "source_name": {"type": "string"},
+    "homepage": {"type": "string", "format": "uri"},
+    "description": {"type": "string"},
+    "ingestion": {
+      "type": "object",
+      "required": ["mode", "status", "discovery_urls", "expected_formats", "notes"],
+      "properties": {
+        "mode": {"enum": ["manual", "planned-adapter", "registry-fetcher"]},
+        "status": {"enum": ["sample-only", "disabled", "ready", "ingested"]},
+        "discovery_urls": {"type": "array", "items": {"type": "string", "format": "uri"}},
+        "expected_formats": {"type": "array", "items": {"type": "string"}},
+        "notes": {"type": "string"}
+      }
+    },
+    "rights": {"type": "object", "required": ["policy"], "properties": {"policy": {"type": "string"}}},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "canonical_url", "local_metadata_file", "enabled"],
+        "properties": {
+          "id": {"type": "string"},
+          "canonical_url": {"type": "string", "format": "uri"},
+          "local_metadata_file": {"type": "string"},
+          "enabled": {"type": "boolean"},
+          "retrieved_at": {"type": "string", "format": "date-time"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "raw_file": {"type": "string"},
+          "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "revision": {"type": "string"},
+          "path": {"type": "string"}
+        }
+      }
+    }
+  }
+}

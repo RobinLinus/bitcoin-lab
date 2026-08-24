@@ -1,0 +1,46 @@
+{
+  "collection": "babylon",
+  "description": "Bounded public snapshot from Babylon Labs' official blog and public papers.",
+  "entries": [
+    {
+      "canonical_url": "https://babylonlabs.io/blog/babylon-and-aegis-partner-to-bring-fixed-rate-borrowing-to-bitcoin-holders",
+      "enabled": true,
+      "id": "babylon-babylon-and-aegis-partner-to-bring-fixed-rate-borrowing-to-bit-b2555bf7d5",
+      "local_metadata_file": "documents/babylon/babylon-babylon-and-aegis-partner-to-bring-fixed-rate-borrowing-to-bit-b2555bf7d5.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/babylon/babylon-babylon-and-aegis-partner-to-bring-fixed-rate-borrowing-to-bit-b2555bf7d5.html",
+      "retrieved_at": "2026-08-24T21:53:18Z",
+      "sha256": "fa9344b3085ad1da86285069faf942824a407f89d21b57e68296ab9686f03d65"
+    },
+    {
+      "canonical_url": "https://babylonlabs.io/blog/script-bitcoin-collateral-risk-assessment-framework",
+      "enabled": true,
+      "id": "babylon-script-bitcoin-collateral-risk-assessment-framework-41537c4e31",
+      "local_metadata_file": "documents/babylon/babylon-script-bitcoin-collateral-risk-assessment-framework-41537c4e31.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/babylon/babylon-script-bitcoin-collateral-risk-assessment-framework-41537c4e31.html",
+      "retrieved_at": "2026-08-24T21:53:18Z",
+      "sha256": "19c5c086106c19e63a968650e2c00b84a0b26a779d6df827f0bff875828f1f2c"
+    }
+  ],
+  "homepage": "https://babylonlabs.io/",
+  "id": "babylon",
+  "ingestion": {
+    "discovery_urls": [
+      "https://babylonlabs.io/blog",
+      "https://docs.babylonlabs.io/papers/"
+    ],
+    "expected_formats": [
+      "application/pdf",
+      "text/html"
+    ],
+    "mode": "registry-fetcher",
+    "notes": "Incremental snapshot managed by scripts/ingest_sources.py; see library/ingestion/latest-report.json.",
+    "status": "ingested"
+  },
+  "rights": {
+    "policy": "Source copyright is retained; no redistribution license is asserted."
+  },
+  "schema_version": "1.0.0",
+  "source_name": "Babylon Labs research"
+}

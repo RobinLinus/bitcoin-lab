@@ -1,0 +1,305 @@
+<html><head><title>[bitcoindev] [BIP Proposal] Anti-Fee-Sniping with LockTime</title><link
+rel=alternate
+title="Atom feed"
+href="../../new.atom"
+type="application/atom+xml"/><style>pre{white-space:pre-wrap}*{font-size:100%;font-family:monospace}</style></head><body><form
+action="../../"><pre><a
+href="../../?t=20260821203517"><b>public inbox for bitcoindev@googlegroups.com</b></a>
+<input
+name=q
+type=text /><input
+type=submit
+value=search /> <a
+href="../../_/text/help/">help</a> / <a
+href="../../_/text/color/">color</a> / <a
+id=mirror
+href="../../_/text/mirror/">mirror</a> / <a
+href="../../new.atom">Atom feed</a></pre></form><pre><a
+href=#ed9116ae7b9b785e09cce8f168eed7743275fa0e6
+id=md9116ae7b9b785e09cce8f168eed7743275fa0e6>*</a> <u
+id=u><b>[bitcoindev] [BIP Proposal] Anti-Fee-Sniping with LockTime</b></u>
+<b>@ 2026-08-18  8:00 &#39;nervana21&#39; via Bitcoin Development Mailing List</b>
+  2026-08-19 13:31 ` <a
+href="#m5afdbf420517fd0f9840b40d2b2c527ae28ea72a">[bitcoindev]</a> &#34; b10c
+  <a
+href=#rd9116ae7b9b785e09cce8f168eed7743275fa0e6>0 siblings, 1 reply; 3+ messages in thread</a>
+From: &#39;nervana21&#39; via Bitcoin Development Mailing List @ 2026-08-18  8:00 UTC (<a
+href="../../wWGWjMw9TI22vp4VzCm4xJJS3IGA1UhndMKynUkB04BqeoRjhe-QbDbJU-GMQq0nnOnXuB__u8KcdIcxU5i8Cy9pbTbtJ7Hi583FzLVojek=@pm.me/">permalink</a> / <a
+href="../../wWGWjMw9TI22vp4VzCm4xJJS3IGA1UhndMKynUkB04BqeoRjhe-QbDbJU-GMQq0nnOnXuB__u8KcdIcxU5i8Cy9pbTbtJ7Hi583FzLVojek=@pm.me/raw">raw</a>)
+  To: bitcoindev
+
+Hello all,
+
+Anti-fee-sniping with nLockTime has been present in Bitcoin Core since
+2014 and in Electrum since 2017. BIP326 assumes this nLockTime behavior
+as the baseline and uses nSequence instead for some taproot spends.
+However, the nLockTime rules themselves were never specified in a BIP.
+
+<a
+href="https://github.com/nervana21/bips/blob/anti-fee-snipe/bip-anti-fee-sniping-with-locktime.md">https://github.com/nervana21/bips/blob/anti-fee-snipe/bip-anti-fee-sniping-with-locktime.md</a>
+
+The BIP draft follows Bitcoin Core&#39;s DiscourageFeeSniping and
+IsCurrentForAntiFeeSniping functions. nLockTime is set to the current tip height.
+With probability 10%, a uniform random integer in 0..99 is subtracted
+and the result is clamped at 0. A locktime equal to the tip height
+cannot be included in a remine of the tip. An older locktime chosen on
+the privacy branch can. nLockTime is set to 0 during initial block
+download or when the tip is more than 8 hours old. The policy is not
+applied when nLockTime is already set or when any input already has a
+preset nSequence. Test vectors are included.
+
+Constructive criticism is greatly appreciated.
+
+Cheers,
+nervana21
+
+-- 
+You received this message because you are subscribed to the Google Groups &#34;Bitcoin Development Mailing List&#34; group.
+To unsubscribe from this group and stop receiving emails from it, send an email to bitcoindev+unsubscribe@googlegroups&#8226;com.
+To view this discussion visit <a
+href="https://groups.google.com/d/msgid/bitcoindev/wWGWjMw9TI22vp4VzCm4xJJS3IGA1UhndMKynUkB04BqeoRjhe-QbDbJU-GMQq0nnOnXuB__u8KcdIcxU5i8Cy9pbTbtJ7Hi583FzLVojek%3D%40pm.me">https://groups.google.com/d/msgid/bitcoindev/wWGWjMw9TI22vp4VzCm4xJJS3IGA1UhndMKynUkB04BqeoRjhe-QbDbJU-GMQq0nnOnXuB__u8KcdIcxU5i8Cy9pbTbtJ7Hi583FzLVojek%3D%40pm.me</a>.
+
+
+<a
+href=#md9116ae7b9b785e09cce8f168eed7743275fa0e6
+id=ed9116ae7b9b785e09cce8f168eed7743275fa0e6>^</a> <a
+href="../../wWGWjMw9TI22vp4VzCm4xJJS3IGA1UhndMKynUkB04BqeoRjhe-QbDbJU-GMQq0nnOnXuB__u8KcdIcxU5i8Cy9pbTbtJ7Hi583FzLVojek=@pm.me/">permalink</a> <a
+href="../../wWGWjMw9TI22vp4VzCm4xJJS3IGA1UhndMKynUkB04BqeoRjhe-QbDbJU-GMQq0nnOnXuB__u8KcdIcxU5i8Cy9pbTbtJ7Hi583FzLVojek=@pm.me/raw">raw</a> <a
+href="../../wWGWjMw9TI22vp4VzCm4xJJS3IGA1UhndMKynUkB04BqeoRjhe-QbDbJU-GMQq0nnOnXuB__u8KcdIcxU5i8Cy9pbTbtJ7Hi583FzLVojek=@pm.me/#R">reply</a>	[<a
+href="../../wWGWjMw9TI22vp4VzCm4xJJS3IGA1UhndMKynUkB04BqeoRjhe-QbDbJU-GMQq0nnOnXuB__u8KcdIcxU5i8Cy9pbTbtJ7Hi583FzLVojek=@pm.me/T/#u"><b>flat</b></a>|<a
+href="../../wWGWjMw9TI22vp4VzCm4xJJS3IGA1UhndMKynUkB04BqeoRjhe-QbDbJU-GMQq0nnOnXuB__u8KcdIcxU5i8Cy9pbTbtJ7Hi583FzLVojek=@pm.me/t/#u">nested</a>] <a
+href=#rd9116ae7b9b785e09cce8f168eed7743275fa0e6>3+ messages in thread</a></pre><hr><pre><a
+href=#e5afdbf420517fd0f9840b40d2b2c527ae28ea72a
+id=m5afdbf420517fd0f9840b40d2b2c527ae28ea72a>*</a> <b>[bitcoindev] Re: [BIP Proposal] Anti-Fee-Sniping with LockTime</b>
+  2026-08-18  8:00 <a
+href="#md9116ae7b9b785e09cce8f168eed7743275fa0e6">[bitcoindev] [BIP Proposal] Anti-Fee-Sniping with LockTime</a> &#39;nervana21&#39; via Bitcoin Development Mailing List
+<b>@ 2026-08-19 13:31 ` b10c</b>
+  2026-08-21 20:29   ` <a
+href="#me6df4ce44e0fed4cc24cda2f38594092b6f01981">&#39;nervana21&#39; via Bitcoin Development Mailing List</a>
+  <a
+href=#r5afdbf420517fd0f9840b40d2b2c527ae28ea72a>0 siblings, 1 reply; 3+ messages in thread</a>
+From: b10c @ 2026-08-19 13:31 UTC (<a
+href="../../2b19cd5e-84aa-4779-b1a6-490cc918cc52n@googlegroups.com/">permalink</a> / <a
+href="../../2b19cd5e-84aa-4779-b1a6-490cc918cc52n@googlegroups.com/raw">raw</a>)
+  To: Bitcoin Development Mailing List
+
+
+<a
+href="../../2b19cd5e-84aa-4779-b1a6-490cc918cc52n@googlegroups.com/1.1-a.txt">[-- Attachment #1.1: Type: text/plain, Size: 3239 bytes --]</a>
+
+Hi nervana21,
+
+some comments in random order on the BIP proposal and Anti-Fee-Sniping:
+
+- You mention BIP125 a couple of times in Specification. Note that in 
+recent versions of Bitcoin Core, BIP125 signaling is no longer required for 
+a transaction to be replaceable under the default mempool policy.
+- While the 10%-back-date-rule in Anti-Fee-Sniping is a privacy feature for 
+some people, it is also a privacy leak for others: <a
+href="https://github.com/bitcoin/bitcoin/issues/26526:">https://github.com/bitcoin/bitcoin/issues/26526:</a> 
+When fee-bumping a previously not back-date transaction, Bitcoin Core might 
+back-date the replacement. This is fingerprint that you likely back-dated 
+the replacement transaction. There is 
+also <a
+href="https://github.com/bitcoin/bitcoin/issues/26527">https://github.com/bitcoin/bitcoin/issues/26527</a>, which I&#39;m not sure if 
+it&#39;s an actual problem or not (haven&#39;t had the time to double-check). Maybe 
+documenting some of these edge-cases in the BIP makes sense. This allows 
+potential future/other implementations not to make similar mistakes.
+- There has been a case where the trying to do Anti-Fee-Sniping 1) wasn&#39;t 
+implemented properly in a wallet so it didn&#39;t work 2) ended up being a 
+clear fingerprint for this wallet: <a
+href="https://b10c.me/observations/01-locktime-stairs/">https://b10c.me/observations/01-locktime-stairs/</a>. 
+By now, this wallet doesn&#39;t have much usage anymore 
+(<a
+href="https://mainnet.observer/charts/transactions-not-enforced-locktime/">https://mainnet.observer/charts/transactions-not-enforced-locktime/</a>) but 
+this still shows some of it&#39;s pitfalls. 
+- Note that currently only around 5% of the transactions set a heigt-based 
+time-lock: <a
+href="https://mainnet.observer/charts/transactions-height-based-locktime/">https://mainnet.observer/charts/transactions-height-based-locktime/</a> 
+- growing this anonymity set might be interesting to some wallets, but 
+currently, do don&#39;t stick out if you don&#39;t do Anti-Fee-Sniping (or use 
+locktime).
+
+Best
+b10c
+On Tuesday, 18 August 2026 at 11:17:44 UTC+2 nervana21 wrote:
+
+<span
+class="q">&gt; Hello all,
+&gt;
+&gt; Anti-fee-sniping with nLockTime has been present in Bitcoin Core since
+&gt; 2014 and in Electrum since 2017. BIP326 assumes this nLockTime behavior
+&gt; as the baseline and uses nSequence instead for some taproot spends.
+&gt; However, the nLockTime rules themselves were never specified in a BIP.
+&gt;
+&gt;
+&gt; <a
+href="https://github.com/nervana21/bips/blob/anti-fee-snipe/bip-anti-fee-sniping-with-locktime.md">https://github.com/nervana21/bips/blob/anti-fee-snipe/bip-anti-fee-sniping-with-locktime.md</a>
+&gt;
+&gt; The BIP draft follows Bitcoin Core&#39;s DiscourageFeeSniping and
+&gt; IsCurrentForAntiFeeSniping functions. nLockTime is set to the current tip 
+&gt; height.
+&gt; With probability 10%, a uniform random integer in 0..99 is subtracted
+&gt; and the result is clamped at 0. A locktime equal to the tip height
+&gt; cannot be included in a remine of the tip. An older locktime chosen on
+&gt; the privacy branch can. nLockTime is set to 0 during initial block
+&gt; download or when the tip is more than 8 hours old. The policy is not
+&gt; applied when nLockTime is already set or when any input already has a
+&gt; preset nSequence. Test vectors are included.
+&gt;
+&gt; Constructive criticism is greatly appreciated.
+&gt;
+&gt; Cheers,
+&gt; nervana21
+&gt;
+</span>
+-- 
+You received this message because you are subscribed to the Google Groups &#34;Bitcoin Development Mailing List&#34; group.
+To unsubscribe from this group and stop receiving emails from it, send an email to bitcoindev+unsubscribe@googlegroups&#8226;com.
+To view this discussion visit <a
+href="https://groups.google.com/d/msgid/bitcoindev/2b19cd5e-84aa-4779-b1a6-490cc918cc52n%40googlegroups.com">https://groups.google.com/d/msgid/bitcoindev/2b19cd5e-84aa-4779-b1a6-490cc918cc52n%40googlegroups.com</a>.
+
+<a
+href="../../2b19cd5e-84aa-4779-b1a6-490cc918cc52n@googlegroups.com/1.2-a.bin">[-- Attachment #1.2: Type: text/html, Size: 4360 bytes --]</a>
+
+<a
+href=#m5afdbf420517fd0f9840b40d2b2c527ae28ea72a
+id=e5afdbf420517fd0f9840b40d2b2c527ae28ea72a>^</a> <a
+href="../../2b19cd5e-84aa-4779-b1a6-490cc918cc52n@googlegroups.com/">permalink</a> <a
+href="../../2b19cd5e-84aa-4779-b1a6-490cc918cc52n@googlegroups.com/raw">raw</a> <a
+href="../../2b19cd5e-84aa-4779-b1a6-490cc918cc52n@googlegroups.com/#R">reply</a>	[<a
+href="../../2b19cd5e-84aa-4779-b1a6-490cc918cc52n@googlegroups.com/T/#u"><b>flat</b></a>|<a
+href="../../2b19cd5e-84aa-4779-b1a6-490cc918cc52n@googlegroups.com/t/#u">nested</a>] <a
+href=#r5afdbf420517fd0f9840b40d2b2c527ae28ea72a>3+ messages in thread</a></pre><hr><pre><a
+href=#ee6df4ce44e0fed4cc24cda2f38594092b6f01981
+id=me6df4ce44e0fed4cc24cda2f38594092b6f01981>*</a> <b>Re: [bitcoindev] Re: [BIP Proposal] Anti-Fee-Sniping with LockTime</b>
+  2026-08-19 13:31 ` <a
+href="#m5afdbf420517fd0f9840b40d2b2c527ae28ea72a">[bitcoindev]</a> &#34; b10c
+<b>@ 2026-08-21 20:29   ` &#39;nervana21&#39; via Bitcoin Development Mailing List</b>
+  <a
+href=#re6df4ce44e0fed4cc24cda2f38594092b6f01981>0 siblings, 0 replies; 3+ messages in thread</a>
+From: &#39;nervana21&#39; via Bitcoin Development Mailing List @ 2026-08-21 20:29 UTC (<a
+href="../../WCgkJmyQ8exgIWF_AXmaycRFvGbLtOwTExlanZ3qkAS1to6Ecb4VduhTFqC42Bc3XE9AIPvpx30Ebe5Vl2NeKarBMUzw8syjsAzgxIZOVso=@pm.me/">permalink</a> / <a
+href="../../WCgkJmyQ8exgIWF_AXmaycRFvGbLtOwTExlanZ3qkAS1to6Ecb4VduhTFqC42Bc3XE9AIPvpx30Ebe5Vl2NeKarBMUzw8syjsAzgxIZOVso=@pm.me/raw">raw</a>)
+  To: b10c; <b>+Cc:</b> Bitcoin Development Mailing List
+
+Hi b10c,
+Thanks for the comments, my replies are inline below.
+
+On Wednesday, August 19th, 2026 at 9:21 AM, b10c &lt;0xb10c@gmail&#8226;com&gt; wrote:
+
+<span
+class="q">&gt; Hi nervana21,
+&gt; 
+&gt; some comments in random order on the BIP proposal and Anti-Fee-Sniping:
+&gt; 
+&gt; 
+&gt; - You mention BIP125 a couple of times in Specification. Note that in recent versions of Bitcoin Core, BIP125 signaling is no longer required for a transaction to be replaceable under the default mempool policy.
+</span>
+You&#39;re right. I&#39;ve updated the draft to remove references to BIP125. For this BIP the only sequence requirement is that at least one input is non-final so that nLockTime is enforced. The pseudocode uses 2**32 - 2 as one conventional choice.
+
+<span
+class="q">&gt; - While the 10%-back-date-rule in Anti-Fee-Sniping is a privacy feature for some people, it is also a privacy leak for others: <a
+href="https://github.com/bitcoin/bitcoin/issues/26526:">https://github.com/bitcoin/bitcoin/issues/26526:</a> When fee-bumping a previously not back-date transaction, Bitcoin Core might back-date the replacement. This is fingerprint that you likely back-dated the replacement transaction. There is also <a
+href="https://github.com/bitcoin/bitcoin/issues/26527">https://github.com/bitcoin/bitcoin/issues/26527</a>, which I&#39;m not sure if it&#39;s an actual problem or not (haven&#39;t had the time to double-check). Maybe documenting some of these edge-cases in the BIP makes sense. This allows potential future/other implementations not to make similar mistakes.
+</span>
+I added a Rationale section that cites <a
+href="https://github.com/bitcoin/bitcoin/issues/26526">https://github.com/bitcoin/bitcoin/issues/26526</a> and the related type flip case <a
+href="https://github.com/bitcoin/bitcoin/issues/35628">https://github.com/bitcoin/bitcoin/issues/35628</a>. The BIP now says implementations should document replacement locktime policy, including locktime type across replacements. When re-running the privacy branch on a height based previous locktime, it floors at that height and does not go older unless that policy is intentional and documented. The spec already covers that a child nLockTime does not protect an unconfirmed parent, so I left <a
+href="https://github.com/bitcoin/bitcoin/issues/26527">https://github.com/bitcoin/bitcoin/issues/26527</a> out of the BIP. Separately, there is currently an open Core PR that aims at the same floor on bumpfee via minimum_height. <a
+href="https://github.com/bitcoin/bitcoin/pull/36040">https://github.com/bitcoin/bitcoin/pull/36040</a>
+
+<span
+class="q">&gt; - There has been a case where the trying to do Anti-Fee-Sniping 1) wasn&#39;t implemented properly in a wallet so it didn&#39;t work 2) ended up being a clear fingerprint for this wallet: <a
+href="https://b10c.me/observations/01-locktime-stairs/">https://b10c.me/observations/01-locktime-stairs/</a>. By now, this wallet doesn&#39;t have much usage anymore (<a
+href="https://mainnet.observer/charts/transactions-not-enforced-locktime/">https://mainnet.observer/charts/transactions-not-enforced-locktime/</a>) but this still shows some of it&#39;s pitfalls.
+</span>
+Got it. I&#39;ve updated the BIP to warn implementers of this pitfall. I cited your locktime stairs writeup and the unenforced locktime chart.
+
+<span
+class="q">&gt; - Note that currently only around 5% of the transactions set a heigt-based time-lock: <a
+href="https://mainnet.observer/charts/transactions-height-based-locktime/">https://mainnet.observer/charts/transactions-height-based-locktime/</a> - growing this anonymity set might be interesting to some wallets, but currently, do don&#39;t stick out if you don&#39;t do Anti-Fee-Sniping (or use locktime).
+</span>
+Makes sense. The draft now mentions this point explicitly and keeps broader adoption as the anonymity set goal.
+
+Updated draft
+<a
+href="https://github.com/nervana21/bips/blob/anti-fee-snipe/bip-anti-fee-sniping-with-locktime.md">https://github.com/nervana21/bips/blob/anti-fee-snipe/bip-anti-fee-sniping-with-locktime.md</a>
+
+Best,
+nervana21
+
+<span
+class="q">&gt; 
+&gt; 
+&gt; Best
+&gt; b10c
+&gt; On Tuesday, 18 August 2026 at 11:17:44 UTC+2 nervana21 wrote:
+&gt; 
+&gt; &gt; Hello all,
+&gt; &gt; 
+&gt; &gt; Anti-fee-sniping with nLockTime has been present in Bitcoin Core since
+&gt; &gt; 2014 and in Electrum since 2017. BIP326 assumes this nLockTime behavior
+&gt; &gt; as the baseline and uses nSequence instead for some taproot spends.
+&gt; &gt; However, the nLockTime rules themselves were never specified in a BIP.
+&gt; &gt; 
+&gt; &gt; <a
+href="https://github.com/nervana21/bips/blob/anti-fee-snipe/bip-anti-fee-sniping-with-locktime.md">https://github.com/nervana21/bips/blob/anti-fee-snipe/bip-anti-fee-sniping-with-locktime.md</a>
+&gt; &gt; 
+&gt; &gt; The BIP draft follows Bitcoin Core&#39;s DiscourageFeeSniping and
+&gt; &gt; IsCurrentForAntiFeeSniping functions. nLockTime is set to the current tip height.
+&gt; &gt; With probability 10%, a uniform random integer in 0..99 is subtracted
+&gt; &gt; and the result is clamped at 0. A locktime equal to the tip height
+&gt; &gt; cannot be included in a remine of the tip. An older locktime chosen on
+&gt; &gt; the privacy branch can. nLockTime is set to 0 during initial block
+&gt; &gt; download or when the tip is more than 8 hours old. The policy is not
+&gt; &gt; applied when nLockTime is already set or when any input already has a
+&gt; &gt; preset nSequence. Test vectors are included.
+&gt; &gt; 
+&gt; &gt; Constructive criticism is greatly appreciated.
+&gt; &gt; 
+&gt; &gt; Cheers,
+&gt; &gt; nervana21
+&gt; 
+&gt; --
+&gt; You received this message because you are subscribed to the Google Groups &#34;Bitcoin Development Mailing List&#34; group.
+&gt; To unsubscribe from this group and stop receiving emails from it, send an email to bitcoindev+unsubscribe@googlegroups&#8226;com.
+&gt; To view this discussion visit <a
+href="https://groups.google.com/d/msgid/bitcoindev/2b19cd5e-84aa-4779-b1a6-490cc918cc52n%40googlegroups.com">https://groups.google.com/d/msgid/bitcoindev/2b19cd5e-84aa-4779-b1a6-490cc918cc52n%40googlegroups.com</a>.
+</span>
+-- 
+You received this message because you are subscribed to the Google Groups &#34;Bitcoin Development Mailing List&#34; group.
+To unsubscribe from this group and stop receiving emails from it, send an email to bitcoindev+unsubscribe@googlegroups&#8226;com.
+To view this discussion visit <a
+href="https://groups.google.com/d/msgid/bitcoindev/WCgkJmyQ8exgIWF_AXmaycRFvGbLtOwTExlanZ3qkAS1to6Ecb4VduhTFqC42Bc3XE9AIPvpx30Ebe5Vl2NeKarBMUzw8syjsAzgxIZOVso%3D%40pm.me">https://groups.google.com/d/msgid/bitcoindev/WCgkJmyQ8exgIWF_AXmaycRFvGbLtOwTExlanZ3qkAS1to6Ecb4VduhTFqC42Bc3XE9AIPvpx30Ebe5Vl2NeKarBMUzw8syjsAzgxIZOVso%3D%40pm.me</a>.
+
+
+<a
+href=#me6df4ce44e0fed4cc24cda2f38594092b6f01981
+id=ee6df4ce44e0fed4cc24cda2f38594092b6f01981>^</a> <a
+href="../../WCgkJmyQ8exgIWF_AXmaycRFvGbLtOwTExlanZ3qkAS1to6Ecb4VduhTFqC42Bc3XE9AIPvpx30Ebe5Vl2NeKarBMUzw8syjsAzgxIZOVso=@pm.me/">permalink</a> <a
+href="../../WCgkJmyQ8exgIWF_AXmaycRFvGbLtOwTExlanZ3qkAS1to6Ecb4VduhTFqC42Bc3XE9AIPvpx30Ebe5Vl2NeKarBMUzw8syjsAzgxIZOVso=@pm.me/raw">raw</a> <a
+href="../../WCgkJmyQ8exgIWF_AXmaycRFvGbLtOwTExlanZ3qkAS1to6Ecb4VduhTFqC42Bc3XE9AIPvpx30Ebe5Vl2NeKarBMUzw8syjsAzgxIZOVso=@pm.me/#R">reply</a>	[<a
+href="../../WCgkJmyQ8exgIWF_AXmaycRFvGbLtOwTExlanZ3qkAS1to6Ecb4VduhTFqC42Bc3XE9AIPvpx30Ebe5Vl2NeKarBMUzw8syjsAzgxIZOVso=@pm.me/T/#u"><b>flat</b></a>|<a
+href="../../WCgkJmyQ8exgIWF_AXmaycRFvGbLtOwTExlanZ3qkAS1to6Ecb4VduhTFqC42Bc3XE9AIPvpx30Ebe5Vl2NeKarBMUzw8syjsAzgxIZOVso=@pm.me/t/#u">nested</a>] <a
+href=#re6df4ce44e0fed4cc24cda2f38594092b6f01981>3+ messages in thread</a></pre><hr><pre>end of thread, other threads:[<a
+href="../../?t=20260821203517">~2026-08-21 20:35 UTC</a> | <a
+href="../../">newest</a>]
+
+<b
+id=t>Thread overview:</b> 3+ messages (download: <a
+href="../t.mbox.gz">mbox.gz</a> / follow: <a
+href="../t.atom">Atom feed</a>)
+-- links below jump to the message on this page --
+2026-08-18  8:00 <a
+href="#md9116ae7b9b785e09cce8f168eed7743275fa0e6"
+id=rd9116ae7b9b785e09cce8f168eed7743275fa0e6>[bitcoindev] [BIP Proposal] Anti-Fee-Sniping with LockTime</a> &#39;nervana21&#39; via Bitcoin Development Mailing List
+2026-08-19 13:31 ` <a
+href="#m5afdbf420517fd0f9840b40d2b2c527ae28ea72a"
+id=r5afdbf420517fd0f9840b40d2b2c527ae28ea72a>[bitcoindev]</a> &#34; b10c
+2026-08-21 20:29   ` <a
+href="#me6df4ce44e0fed4cc24cda2f38594092b6f01981"
+id=re6df4ce44e0fed4cc24cda2f38594092b6f01981>&#39;nervana21&#39; via Bitcoin Development Mailing List</a>
+</pre><hr><pre>This is a public inbox, see <a
+href="../../_/text/mirror/">mirroring instructions</a>
+for how to clone and mirror all data and code used for this inbox</pre></body></html>

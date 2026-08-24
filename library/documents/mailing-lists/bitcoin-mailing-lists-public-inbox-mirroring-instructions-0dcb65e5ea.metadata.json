@@ -1,0 +1,45 @@
+{
+  "abstract": "public-inbox mirroring instructions Source: https://gnusha.org/pi/bitcoindev/ /text/mirror/ Retrieved: 2026-08-24T21:52:29Z --- public inbox for bitcoindev@googlegroups.com help / color / mirror / Atom feed public-inbox mirroring instructions This public inbox may be cloned and mirrored by anyone: git clone --mirror https://gnusha.org/pi/bitcoindev git clone --mirror git://gnusha.org/pi-bitcoindev If you have public-inbox 1.1+ installed, you may initialize and index your mirror using the following commands: public-inbox-init -V1 \\ bitcoindev ./bitcoindev https://gnusha.org/pi/bitcoindev \\ bitc",
+  "authors": [
+    "Bitcoin development mailing lists"
+  ],
+  "bitcoin_topics": [
+    "protocol-development",
+    "consensus",
+    "relay-policy"
+  ],
+  "canonical_url": "https://gnusha.org/pi/bitcoindev/_/text/mirror/",
+  "collection": "mailing-lists",
+  "content_file": "bitcoin-mailing-lists-public-inbox-mirroring-instructions-0dcb65e5ea.md",
+  "id": "bitcoin-mailing-lists-public-inbox-mirroring-instructions-0dcb65e5ea",
+  "license": "Public author-owned correspondence; retain source attribution and canonical archive URL. No redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public author-owned correspondence; retain source attribution and canonical archive URL. No redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "text/html",
+    "fetched_url": "https://gnusha.org/pi/bitcoindev/_/text/mirror/",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/bitcoin-mailing-lists/bitcoin-mailing-lists-public-inbox-mirroring-instructions-0dcb65e5ea.html",
+    "retrieved_at": "2026-08-24T21:52:29Z",
+    "sha256": "f0813b3d19e24864f1c72eb78e57778d41d56e3cd2c63b6b9f6983f6063bd756"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/bitcoin-mailing-lists.json",
+  "source_type": "mailing-list-thread",
+  "tags": [
+    "bitcoin-dev",
+    "mailing-list",
+    "protocol-development",
+    "public-source",
+    "ingested"
+  ],
+  "title": "public-inbox mirroring instructions"
+}

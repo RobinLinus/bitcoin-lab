@@ -1,0 +1,45 @@
+{
+  "abstract": "Welcome to Delving Bitcoin!",
+  "authors": [
+    "system",
+    "admin"
+  ],
+  "bitcoin_topics": [
+    "protocol-development",
+    "consensus",
+    "wallets"
+  ],
+  "canonical_url": "https://delvingbitcoin.org/t/welcome-to-delving-bitcoin/7",
+  "collection": "delving-bitcoin",
+  "content_file": "delving-bitcoin-welcome-to-delving-bitcoin-864521bd95.md",
+  "id": "delving-bitcoin-welcome-to-delving-bitcoin-864521bd95",
+  "license": "Public forum posts remain author-owned unless a post states otherwise. Store a local research snapshot with attribution; no redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public forum posts remain author-owned unless a post states otherwise. Store a local research snapshot with attribution; no redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "application/json",
+    "fetched_url": "https://delvingbitcoin.org/t/welcome-to-delving-bitcoin/7.json",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/delving-bitcoin/delving-bitcoin-welcome-to-delving-bitcoin-864521bd95.json",
+    "retrieved_at": "2026-08-24T21:52:39Z",
+    "sha256": "6fb11478ab96987843f22fad6a1442aa4ec72e7b7d938e4dafe29929987ced2c"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/delving-bitcoin.json",
+  "source_type": "article",
+  "tags": [
+    "delving-bitcoin",
+    "technical-discussion",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Welcome to Delving Bitcoin!"
+}

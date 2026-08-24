@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "id": "nakamoto-2008-bitcoin",
+  "title": "Bitcoin: A Peer-to-Peer Electronic Cash System — research note",
+  "authors": ["Satoshi Nakamoto"],
+  "published_at": "2008-10-31",
+  "source_type": "paper",
+  "collection": "papers",
+  "canonical_url": "https://bitcoin.org/bitcoin.pdf",
+  "content_file": "nakamoto-2008-bitcoin.md",
+  "license": "CC0-1.0",
+  "retrieved_at": "2026-08-24",
+  "abstract": "An original test-corpus summary of the Bitcoin paper's peer-to-peer cash, proof-of-work ordering, and double-spend model.",
+  "tags": ["foundations", "proof-of-work", "peer-to-peer"],
+  "bitcoin_topics": ["consensus", "double-spending", "incentives"],
+  "source_manifest": "manifests/research-papers.json",
+  "provenance": {
+    "content_kind": "curated-summary",
+    "is_sample": true,
+    "notes": "Original lab fixture summarizing, not reproducing, the linked source paper.",
+    "source_license": "Not asserted; consult the canonical source."
+  }
+}
+

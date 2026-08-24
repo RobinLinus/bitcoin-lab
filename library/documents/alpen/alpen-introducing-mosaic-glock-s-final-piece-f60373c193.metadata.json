@@ -1,0 +1,44 @@
+{
+  "abstract": "Mosaic realizes the Glock paper's vision at a low onchain cost.",
+  "authors": [
+    "Alpen Labs research"
+  ],
+  "bitcoin_topics": [
+    "Bitcoin-rollups",
+    "zero-knowledge-proofs",
+    "verification"
+  ],
+  "canonical_url": "https://www.alpen.org/blog/introducing-mosaic-glocks-final-piece",
+  "collection": "alpen",
+  "content_file": "alpen-introducing-mosaic-glock-s-final-piece-f60373c193.md",
+  "id": "alpen-introducing-mosaic-glock-s-final-piece-f60373c193",
+  "license": "Public articles remain copyrighted by Alpen Labs or named authors unless an item states a license. No redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public articles remain copyrighted by Alpen Labs or named authors unless an item states a license. No redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "text/html",
+    "fetched_url": "https://www.alpen.org/blog/introducing-mosaic-glocks-final-piece",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/alpen/alpen-introducing-mosaic-glock-s-final-piece-f60373c193.html",
+    "retrieved_at": "2026-08-24T21:53:09Z",
+    "sha256": "fb9a5781c3afee77b37816a6c8176d6e0ad9aa1853854e62b0852fd078bcaa8c"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/alpen.json",
+  "source_type": "article",
+  "tags": [
+    "alpen-labs",
+    "bitcoin-research",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Introducing Mosaic: Glock's final piece"
+}

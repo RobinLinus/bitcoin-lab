@@ -1,0 +1,45 @@
+{
+  "abstract": "new.atom Source: https://gnusha.org/pi/bitcoindev/new.atom Retrieved: 2026-08-24T21:52:29Z --- <?xml version=\"1.0\" encoding=\"us-ascii\"? <feed xmlns=\"http://www.w3.org/2005/Atom\" xmlns:thr=\"http://purl.org/syndication/thread/1.0\" <title public inbox for bitcoindev@googlegroups.com</title <link rel=\"alternate\" type=\"text/html\" href=\"https://gnusha.org/pi/bitcoindev/\"/ <link rel=\"self\" href=\"https://gnusha.org/pi/bitcoindev/new.atom\"/ <id mailto:bitcoindev@googlegroups.com</id <updated 2026-08-24T13:19:55Z</updated <entry <author <name blocktraveler</name <email ueberspannung@gmail.com</email </a",
+  "authors": [
+    "Bitcoin development mailing lists"
+  ],
+  "bitcoin_topics": [
+    "protocol-development",
+    "consensus",
+    "relay-policy"
+  ],
+  "canonical_url": "https://gnusha.org/pi/bitcoindev/new.atom",
+  "collection": "mailing-lists",
+  "content_file": "bitcoin-mailing-lists-new-atom-a84ed4ba4e.md",
+  "id": "bitcoin-mailing-lists-new-atom-a84ed4ba4e",
+  "license": "Public author-owned correspondence; retain source attribution and canonical archive URL. No redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public author-owned correspondence; retain source attribution and canonical archive URL. No redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "application/atom+xml",
+    "fetched_url": "https://gnusha.org/pi/bitcoindev/new.atom",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/bitcoin-mailing-lists/bitcoin-mailing-lists-new-atom-a84ed4ba4e.atom",
+    "retrieved_at": "2026-08-24T21:52:29Z",
+    "sha256": "3e4da19510a5fc613fa5ec8d03790e56c942583733f87444e7cd09e5bd0a01a8"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/bitcoin-mailing-lists.json",
+  "source_type": "mailing-list-thread",
+  "tags": [
+    "bitcoin-dev",
+    "mailing-list",
+    "protocol-development",
+    "public-source",
+    "ingested"
+  ],
+  "title": "new.atom"
+}

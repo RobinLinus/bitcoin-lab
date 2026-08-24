@@ -1,0 +1,65 @@
+{
+  "collection": "fairgate",
+  "description": "Bounded public research snapshot discovered from Fairgate's official resource hub.",
+  "entries": [
+    {
+      "canonical_url": "https://www.fairgate.io/resources/bit2",
+      "enabled": true,
+      "id": "fairgate-fairgate-fairgate-bit2-agentic-economy-cb18423427",
+      "local_metadata_file": "documents/fairgate/fairgate-fairgate-fairgate-bit2-agentic-economy-cb18423427.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/fairgate/fairgate-fairgate-fairgate-bit2-agentic-economy-cb18423427.html",
+      "retrieved_at": "2026-08-24T21:53:00Z",
+      "sha256": "7a0774cc87cf1a16728f28d7c0c006e74059dca5dacdc3d022ec42c7e8f53f06"
+    },
+    {
+      "canonical_url": "https://www.fairgate.io/resources/bitvmx-bridges",
+      "enabled": true,
+      "id": "fairgate-fairgate-fairgate-bitvmx-bridges-987916453d",
+      "local_metadata_file": "documents/fairgate/fairgate-fairgate-fairgate-bitvmx-bridges-987916453d.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/fairgate/fairgate-fairgate-fairgate-bitvmx-bridges-987916453d.html",
+      "retrieved_at": "2026-08-24T21:53:00Z",
+      "sha256": "2e298f9d6744a6c41345269724d4b863592f7d025669b4c36dcf7db86c78d357"
+    },
+    {
+      "canonical_url": "https://www.fairgate.io/resources/garbled-circuits",
+      "enabled": true,
+      "id": "fairgate-fairgate-fairgate-garbled-circuits-8faefb36c7",
+      "local_metadata_file": "documents/fairgate/fairgate-fairgate-fairgate-garbled-circuits-8faefb36c7.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/fairgate/fairgate-fairgate-fairgate-garbled-circuits-8faefb36c7.html",
+      "retrieved_at": "2026-08-24T21:53:00Z",
+      "sha256": "19de257b98d6ca7bbcd6c427423155dd0d45958ff14a95e3e53a4a69ec0ea44c"
+    },
+    {
+      "canonical_url": "https://fairgate.io/assets/fairgate-whitepaper.pdf",
+      "enabled": true,
+      "id": "fairgate-fairgate-whitepaper-c1e758a1ac",
+      "local_metadata_file": "documents/fairgate/fairgate-fairgate-whitepaper-c1e758a1ac.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/fairgate/fairgate-fairgate-whitepaper-c1e758a1ac.pdf",
+      "retrieved_at": "2026-08-24T21:53:00Z",
+      "sha256": "bcab785a6d2e3a65c41f0df604a6b5bda0b5598d2ed218b840e81eb276741f63"
+    }
+  ],
+  "homepage": "https://fairgate.io/",
+  "id": "fairgate",
+  "ingestion": {
+    "discovery_urls": [
+      "https://fairgate.io/resource-hub"
+    ],
+    "expected_formats": [
+      "application/pdf",
+      "text/html"
+    ],
+    "mode": "registry-fetcher",
+    "notes": "Incremental snapshot managed by scripts/ingest_sources.py; see library/ingestion/latest-report.json.",
+    "status": "ingested"
+  },
+  "rights": {
+    "policy": "Source copyright is retained; no redistribution license is asserted."
+  },
+  "schema_version": "1.0.0",
+  "source_name": "Fairgate research"
+}

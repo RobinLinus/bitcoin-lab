@@ -1,0 +1,47 @@
+{
+  "abstract": "BIP300-like withdrawals with BIP448-style covenants",
+  "authors": [
+    "RobinLinus"
+  ],
+  "bitcoin_topics": [
+    "Bitcoin",
+    "cryptography",
+    "prototypes"
+  ],
+  "canonical_url": "https://gist.github.com/RobinLinus/7fbfcf4110d010222b1e0b8f972ec351#file-th-chains-md",
+  "collection": "robinlinus-gists",
+  "content_file": "robinlinus-gists-bip300-like-withdrawals-with-bip448-style-covenants-th-chains-b0bcef3a7f.md",
+  "id": "robinlinus-gists-bip300-like-withdrawals-with-bip448-style-covenants-th-chains-b0bcef3a7f",
+  "license": "Public gists have no implied open-source license. Preserve author, canonical gist URL, revision, and filename; no redistribution license is asserted unless a gist states one.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public gists have no implied open-source license. Preserve author, canonical gist URL, revision, and filename; no redistribution license is asserted unless a gist states one."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "text/markdown",
+    "fetched_url": "https://api.github.com/gists/7fbfcf4110d010222b1e0b8f972ec351",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-api",
+    "path": "th-chains.md",
+    "raw_file": "raw/robinlinus-gists/robinlinus-gists-bip300-like-withdrawals-with-bip448-style-covenants-th-chains-b0bcef3a7f.md",
+    "retrieved_at": "2026-08-24T21:53:25Z",
+    "revision": "ef653ab737d38254589af3a52bd46c17372db5a1",
+    "sha256": "9083ace99b295e1f2b13b20529c5ae779e8f94d702d6b73efd6ae3b4c010a292"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/robinlinus-gists.json",
+  "source_type": "source-code",
+  "tags": [
+    "robin-linus",
+    "github-gist",
+    "source-code",
+    "public-source",
+    "ingested"
+  ],
+  "title": "BIP300-like withdrawals with BIP448-style covenants / th-chains.md"
+}

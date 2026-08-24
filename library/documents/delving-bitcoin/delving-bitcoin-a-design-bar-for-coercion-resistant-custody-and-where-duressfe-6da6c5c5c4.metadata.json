@@ -1,0 +1,44 @@
+{
+  "abstract": "A design bar for coercion-resistant custody, and where duressfeatures land against it",
+  "authors": [
+    "user1"
+  ],
+  "bitcoin_topics": [
+    "protocol-development",
+    "consensus",
+    "wallets"
+  ],
+  "canonical_url": "https://delvingbitcoin.org/t/a-design-bar-for-coercion-resistant-custody-and-where-duressfeatures-land-against-it/2832",
+  "collection": "delving-bitcoin",
+  "content_file": "delving-bitcoin-a-design-bar-for-coercion-resistant-custody-and-where-duressfe-6da6c5c5c4.md",
+  "id": "delving-bitcoin-a-design-bar-for-coercion-resistant-custody-and-where-duressfe-6da6c5c5c4",
+  "license": "Public forum posts remain author-owned unless a post states otherwise. Store a local research snapshot with attribution; no redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public forum posts remain author-owned unless a post states otherwise. Store a local research snapshot with attribution; no redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "application/json",
+    "fetched_url": "https://delvingbitcoin.org/t/a-design-bar-for-coercion-resistant-custody-and-where-duressfeatures-land-against-it/2832.json",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/delving-bitcoin/delving-bitcoin-a-design-bar-for-coercion-resistant-custody-and-where-duressfe-6da6c5c5c4.json",
+    "retrieved_at": "2026-08-24T21:52:39Z",
+    "sha256": "2899be576ae45f48f52dbae7edc6b34cdf7674cfb0cf157ec9ae522651574de2"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/delving-bitcoin.json",
+  "source_type": "article",
+  "tags": [
+    "delving-bitcoin",
+    "technical-discussion",
+    "public-source",
+    "ingested"
+  ],
+  "title": "A design bar for coercion-resistant custody, and where duressfeatures land against it"
+}

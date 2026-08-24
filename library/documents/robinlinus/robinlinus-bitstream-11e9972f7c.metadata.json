@@ -1,0 +1,44 @@
+{
+  "abstract": "bitstream Source: https://robinlinus.com/bitstream.pdf Retrieved: 2026-08-24T21:52:50Z Extraction note: pdftotext was not installed; the PDF is retained and indexed by title/provenance only. --- PDF retained in the raw source directory.",
+  "authors": [
+    "Robin Linus research"
+  ],
+  "bitcoin_topics": [
+    "BitVM",
+    "zero-knowledge-proofs",
+    "Bitcoin"
+  ],
+  "canonical_url": "https://robinlinus.com/bitstream.pdf",
+  "collection": "robinlinus",
+  "content_file": "robinlinus-bitstream-11e9972f7c.md",
+  "id": "robinlinus-bitstream-11e9972f7c",
+  "license": "Public research material remains copyrighted by its authors unless the source states a license. The snapshot records attribution and does not assert redistribution rights.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public research material remains copyrighted by its authors unless the source states a license. The snapshot records attribution and does not assert redistribution rights."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "application/pdf",
+    "fetched_url": "https://robinlinus.com/bitstream.pdf",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/robinlinus/robinlinus-bitstream-11e9972f7c.pdf",
+    "retrieved_at": "2026-08-24T21:52:50Z",
+    "sha256": "10d4c7f15c28789d29b3b737c8f61bf9e15459e404ef75029871bfce51b49f9f"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/robinlinus.json",
+  "source_type": "paper",
+  "tags": [
+    "robin-linus",
+    "bitcoin-research",
+    "public-source",
+    "ingested"
+  ],
+  "title": "bitstream"
+}

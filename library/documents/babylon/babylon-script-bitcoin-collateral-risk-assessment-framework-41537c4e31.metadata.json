@@ -1,0 +1,44 @@
+{
+  "abstract": "SCRIPT: Bitcoin Collateral Risk Assessment Framework The risk assessment framework that the Babylon team has been using internally for our native Bitcoin collateral protocol design. Bitcoin holders and applications can use SCRIPT to systematically assess the counterparty risks of any Bitcoin collateral solutions, including Babylon\u2019s.",
+  "authors": [
+    "Babylon Labs research"
+  ],
+  "bitcoin_topics": [
+    "Bitcoin-staking",
+    "Bitcoin-vaults",
+    "finality"
+  ],
+  "canonical_url": "https://babylonlabs.io/blog/script-bitcoin-collateral-risk-assessment-framework",
+  "collection": "babylon",
+  "content_file": "babylon-script-bitcoin-collateral-risk-assessment-framework-41537c4e31.md",
+  "id": "babylon-script-bitcoin-collateral-risk-assessment-framework-41537c4e31",
+  "license": "Public papers and articles remain copyrighted by Babylon Labs or named authors unless an item states a license. No redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public papers and articles remain copyrighted by Babylon Labs or named authors unless an item states a license. No redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "text/html",
+    "fetched_url": "https://babylonlabs.io/blog/script-bitcoin-collateral-risk-assessment-framework",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/babylon/babylon-script-bitcoin-collateral-risk-assessment-framework-41537c4e31.html",
+    "retrieved_at": "2026-08-24T21:53:18Z",
+    "sha256": "19c5c086106c19e63a968650e2c00b84a0b26a779d6df827f0bff875828f1f2c"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/babylon.json",
+  "source_type": "article",
+  "tags": [
+    "babylon-labs",
+    "bitcoin-research",
+    "public-source",
+    "ingested"
+  ],
+  "title": "SCRIPT: Bitcoin Collateral Risk Assessment Framework"
+}

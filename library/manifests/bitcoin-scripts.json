@@ -1,0 +1,104 @@
+{
+  "collection": "bitcoin-scripts",
+  "description": "Pinned public source and documentation snapshot from the user-supplied coins/bitcoin-scripts repository.",
+  "entries": [
+    {
+      "canonical_url": "https://github.com/coins/bitcoin-scripts/blob/8f442e4bf8a744dd9bf69b2937bdebcaed5cae77/31-bit_commitment.md",
+      "commit": "8f442e4bf8a744dd9bf69b2937bdebcaed5cae77",
+      "enabled": true,
+      "id": "bitcoin-scripts-31-bit-commitment-md-bf8fb47047",
+      "local_metadata_file": "documents/bitcoin-scripts/bitcoin-scripts-31-bit-commitment-md-bf8fb47047.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "31-bit_commitment.md",
+      "raw_file": "raw/bitcoin-scripts/bitcoin-scripts-31-bit-commitment-md-bf8fb47047.md",
+      "repository": "https://github.com/coins/bitcoin-scripts.git",
+      "retrieved_at": "2026-08-24T21:53:22Z",
+      "sha256": "5449af56eb8650ee8a306a2816f78d488de73295f5078656f7a07d61dbeb846c"
+    },
+    {
+      "canonical_url": "https://github.com/coins/bitcoin-scripts/blob/8f442e4bf8a744dd9bf69b2937bdebcaed5cae77/betcoins.md",
+      "commit": "8f442e4bf8a744dd9bf69b2937bdebcaed5cae77",
+      "enabled": true,
+      "id": "bitcoin-scripts-betcoins-md-608c89c8e6",
+      "local_metadata_file": "documents/bitcoin-scripts/bitcoin-scripts-betcoins-md-608c89c8e6.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "betcoins.md",
+      "raw_file": "raw/bitcoin-scripts/bitcoin-scripts-betcoins-md-608c89c8e6.md",
+      "repository": "https://github.com/coins/bitcoin-scripts.git",
+      "retrieved_at": "2026-08-24T21:53:22Z",
+      "sha256": "015f1b4ddde385681cf6b95f4eba7cc5fc2aca0d4904b9a7f33a642d78a3edc0"
+    },
+    {
+      "canonical_url": "https://github.com/coins/bitcoin-scripts/blob/8f442e4bf8a744dd9bf69b2937bdebcaed5cae77/bitwise_xor.md",
+      "commit": "8f442e4bf8a744dd9bf69b2937bdebcaed5cae77",
+      "enabled": true,
+      "id": "bitcoin-scripts-bitwise-xor-md-469adb83cf",
+      "local_metadata_file": "documents/bitcoin-scripts/bitcoin-scripts-bitwise-xor-md-469adb83cf.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "bitwise_xor.md",
+      "raw_file": "raw/bitcoin-scripts/bitcoin-scripts-bitwise-xor-md-469adb83cf.md",
+      "repository": "https://github.com/coins/bitcoin-scripts.git",
+      "retrieved_at": "2026-08-24T21:53:22Z",
+      "sha256": "27b817b491926a762623686b141eb4a4b85819063ce7aee0ecdee17c40ff2162"
+    },
+    {
+      "canonical_url": "https://github.com/coins/bitcoin-scripts/blob/8f442e4bf8a744dd9bf69b2937bdebcaed5cae77/composite-opcodes.md",
+      "commit": "8f442e4bf8a744dd9bf69b2937bdebcaed5cae77",
+      "enabled": true,
+      "id": "bitcoin-scripts-composite-opcodes-md-485c915156",
+      "local_metadata_file": "documents/bitcoin-scripts/bitcoin-scripts-composite-opcodes-md-485c915156.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "composite-opcodes.md",
+      "raw_file": "raw/bitcoin-scripts/bitcoin-scripts-composite-opcodes-md-485c915156.md",
+      "repository": "https://github.com/coins/bitcoin-scripts.git",
+      "retrieved_at": "2026-08-24T21:53:22Z",
+      "sha256": "7088e5786c3aa5a5751bb5265241adaab955aa4cf8c1081b32afdc4f2aa1eaf0"
+    },
+    {
+      "canonical_url": "https://github.com/coins/bitcoin-scripts/blob/8f442e4bf8a744dd9bf69b2937bdebcaed5cae77/decaying-multi-signature.md",
+      "commit": "8f442e4bf8a744dd9bf69b2937bdebcaed5cae77",
+      "enabled": true,
+      "id": "bitcoin-scripts-decaying-multi-signature-md-bc3c5e418a",
+      "local_metadata_file": "documents/bitcoin-scripts/bitcoin-scripts-decaying-multi-signature-md-bc3c5e418a.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "decaying-multi-signature.md",
+      "raw_file": "raw/bitcoin-scripts/bitcoin-scripts-decaying-multi-signature-md-bc3c5e418a.md",
+      "repository": "https://github.com/coins/bitcoin-scripts.git",
+      "retrieved_at": "2026-08-24T21:53:22Z",
+      "sha256": "1b5c743b914a57ae56edadb9a5ec83fd7bb48358f9818a949eb2697155870d7d"
+    },
+    {
+      "canonical_url": "https://github.com/coins/bitcoin-scripts/blob/8f442e4bf8a744dd9bf69b2937bdebcaed5cae77/README.md",
+      "commit": "8f442e4bf8a744dd9bf69b2937bdebcaed5cae77",
+      "enabled": true,
+      "id": "bitcoin-scripts-readme-md-4d38e88184",
+      "local_metadata_file": "documents/bitcoin-scripts/bitcoin-scripts-readme-md-4d38e88184.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "README.md",
+      "raw_file": "raw/bitcoin-scripts/bitcoin-scripts-readme-md-4d38e88184.md",
+      "repository": "https://github.com/coins/bitcoin-scripts.git",
+      "retrieved_at": "2026-08-24T21:53:22Z",
+      "sha256": "0a22218350b4545e553ab099e185977f3b6c3d66f08c5f4aaef65b4c046a440a"
+    }
+  ],
+  "homepage": "https://github.com/coins/bitcoin-scripts",
+  "id": "bitcoin-scripts",
+  "ingestion": {
+    "discovery_urls": [
+      "https://github.com/coins/bitcoin-scripts"
+    ],
+    "expected_formats": [
+      "text/plain",
+      "text/markdown",
+      "source-code"
+    ],
+    "mode": "registry-fetcher",
+    "notes": "Incremental snapshot managed by scripts/ingest_sources.py; see library/ingestion/latest-report.json.",
+    "status": "ingested"
+  },
+  "rights": {
+    "policy": "No repository LICENSE or COPYING file was detected at the pinned commit; no reuse or redistribution license is asserted."
+  },
+  "schema_version": "1.0.0",
+  "source_name": "coins/bitcoin-scripts"
+}

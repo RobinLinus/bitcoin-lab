@@ -1,0 +1,18 @@
+# Local credentials are never committed or copied into an image.
+api.key
+.env
+.env.*
+
+# Runtime state
+data/*
+!data/.gitkeep
+*.db
+*.db-shm
+*.db-wal
+
+# Python/editor state
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+

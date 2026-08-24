@@ -1,0 +1,13 @@
+[package]
+name = "bitcoin-script-kernel"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false
+
+[dependencies]
+bitcoinkernel = { git = "https://github.com/sedited/rust-bitcoinkernel.git", rev = "691a90cc0c20761cc9b35a783e0e84c77245d555", features = ["script-trace"] }
+hex = "0.4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+

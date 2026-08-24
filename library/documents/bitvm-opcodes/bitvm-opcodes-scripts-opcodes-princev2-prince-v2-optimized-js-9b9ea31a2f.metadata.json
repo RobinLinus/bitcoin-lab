@@ -1,0 +1,46 @@
+{
+  "abstract": "scripts/opcodes/PRINCEv2/prince_v2_optimized.js at pinned commit b931a6711ab332fd5923e708c869bed02e39984e.",
+  "authors": [
+    "BitVM/bitvm-js opcode scripts"
+  ],
+  "bitcoin_topics": [
+    "Bitcoin-Script",
+    "BitVM",
+    "opcodes"
+  ],
+  "canonical_url": "https://github.com/BitVM/bitvm-js/blob/b931a6711ab332fd5923e708c869bed02e39984e/scripts/opcodes/PRINCEv2/prince_v2_optimized.js",
+  "collection": "bitvm-opcodes",
+  "content_file": "bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized-js-9b9ea31a2f.md",
+  "id": "bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized-js-9b9ea31a2f",
+  "license": "No repository LICENSE or COPYING file was detected at the pinned commit. No reuse or redistribution license is asserted; individual file notices, if any, continue to apply.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "No repository LICENSE or COPYING file was detected at the pinned commit. No reuse or redistribution license is asserted; individual file notices, if any, continue to apply."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "commit": "b931a6711ab332fd5923e708c869bed02e39984e",
+    "content_type": "text/plain",
+    "fetcher_version": "1.0.0",
+    "method": "public-git",
+    "path": "scripts/opcodes/PRINCEv2/prince_v2_optimized.js",
+    "raw_file": "raw/bitvm-opcodes/bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized-js-9b9ea31a2f.js",
+    "repository": "https://github.com/BitVM/bitvm-js.git",
+    "retrieved_at": "2026-08-24T21:53:24Z",
+    "sha256": "4112314da06ad0ea3819646a20dfd97818b393f25db0b136268dd73ba757f4c1"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/bitvm-opcodes.json",
+  "source_type": "source-code",
+  "tags": [
+    "BitVM",
+    "opcodes",
+    "source-code",
+    "public-source",
+    "ingested"
+  ],
+  "title": "scripts/opcodes/PRINCEv2/prince_v2_optimized.js"
+}

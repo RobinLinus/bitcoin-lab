@@ -1,0 +1,44 @@
+{
+  "abstract": "vrf Source: https://robinlinus.com/vrf.pdf Retrieved: 2026-08-24T21:52:50Z Extraction note: pdftotext was not installed; the PDF is retained and indexed by title/provenance only. --- PDF retained in the raw source directory.",
+  "authors": [
+    "Robin Linus research"
+  ],
+  "bitcoin_topics": [
+    "BitVM",
+    "zero-knowledge-proofs",
+    "Bitcoin"
+  ],
+  "canonical_url": "https://robinlinus.com/vrf.pdf",
+  "collection": "robinlinus",
+  "content_file": "robinlinus-vrf-a1129d36b4.md",
+  "id": "robinlinus-vrf-a1129d36b4",
+  "license": "Public research material remains copyrighted by its authors unless the source states a license. The snapshot records attribution and does not assert redistribution rights.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public research material remains copyrighted by its authors unless the source states a license. The snapshot records attribution and does not assert redistribution rights."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "application/pdf",
+    "fetched_url": "https://robinlinus.com/vrf.pdf",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/robinlinus/robinlinus-vrf-a1129d36b4.pdf",
+    "retrieved_at": "2026-08-24T21:52:50Z",
+    "sha256": "2e86626fef988687ab9c132639241d5e2693ae79b34c8a6ef29c4783cb47beeb"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/robinlinus.json",
+  "source_type": "paper",
+  "tags": [
+    "robin-linus",
+    "bitcoin-research",
+    "public-source",
+    "ingested"
+  ],
+  "title": "vrf"
+}

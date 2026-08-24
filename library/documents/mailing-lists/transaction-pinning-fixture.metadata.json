@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "id": "mailing-list-pinning-fixture",
+  "title": "Transaction pinning and replacement — synthetic mailing-list fixture",
+  "authors": ["Bitcoin Research Lab"],
+  "published_at": "2026-08-24",
+  "source_type": "mailing-list-thread",
+  "collection": "mailing-lists",
+  "canonical_url": "https://groups.google.com/g/bitcoindev",
+  "content_file": "transaction-pinning-fixture.md",
+  "license": "CC0-1.0",
+  "retrieved_at": "2026-08-24",
+  "abstract": "A synthetic mailing-list retrieval fixture about transaction pinning, replacement policy, and protocol review provenance.",
+  "tags": ["synthetic-fixture", "transaction-pinning", "replacement"],
+  "bitcoin_topics": ["mempool-policy", "rbf", "fee-bumping", "protocol-review"],
+  "source_manifest": "manifests/bitcoin-mailing-lists.json",
+  "provenance": {
+    "content_kind": "synthetic-fixture",
+    "is_sample": true,
+    "notes": "Original test text; no external email content is included.",
+    "source_license": "Not applicable to synthetic fixture."
+  }
+}
+

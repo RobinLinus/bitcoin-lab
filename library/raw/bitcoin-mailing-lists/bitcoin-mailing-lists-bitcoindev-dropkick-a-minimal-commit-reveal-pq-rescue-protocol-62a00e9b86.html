@@ -1,0 +1,659 @@
+<html><head><title>[bitcoindev] DropKick &#9917;&#65039; - A minimal commit/reveal PQ rescue protocol</title><link
+rel=alternate
+title="Atom feed"
+href="../../new.atom"
+type="application/atom+xml"/><style>pre{white-space:pre-wrap}*{font-size:100%;font-family:monospace}</style></head><body><form
+action="../../"><pre><a
+href="../../?t=20260823235809"><b>public inbox for bitcoindev@googlegroups.com</b></a>
+<input
+name=q
+type=text /><input
+type=submit
+value=search /> <a
+href="../../_/text/help/">help</a> / <a
+href="../../_/text/color/">color</a> / <a
+id=mirror
+href="../../_/text/mirror/">mirror</a> / <a
+href="../../new.atom">Atom feed</a></pre></form><pre><a
+href=#e984f22f8a646298cfe2ad2461916f5ff1043c858
+id=m984f22f8a646298cfe2ad2461916f5ff1043c858>*</a> <b>[bitcoindev] DropKick &#9917;&#65039; - A minimal commit/reveal PQ rescue protocol</b>
+<b>@ 2026-08-20 21:30 &#39;conduition&#39; via Bitcoin Development Mailing List</b>
+  2026-08-22 17:46 ` <a
+href="#mfa1857336e77db8f1b71e94d042094ffbaa2226a">Alex</a>
+  <a
+href=#r984f22f8a646298cfe2ad2461916f5ff1043c858>0 siblings, 1 reply; 3+ messages in thread</a>
+From: &#39;conduition&#39; via Bitcoin Development Mailing List @ 2026-08-20 21:30 UTC (<a
+href="../../ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo=@proton.me/">permalink</a> / <a
+href="../../ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo=@proton.me/raw">raw</a>)
+  To: bitcoindev
+
+
+<a
+href="../../ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo=@proton.me/1.1.1-a.txt">[-- Attachment #1.1.1: Type: text/plain, Size: 10103 bytes --]</a>
+
+Dearest friends, colleagues, and lurkers,
+
+I would like to present for your consideration a new commit/reveal rescue protocol to save the coins of quantum procrastinators - those who take no action to move their coins to PQC-enabled wallets by Q-Day.
+
+<a
+href="https://conduition.io/bitcoin/dropkick/">https://conduition.io/bitcoin/dropkick/</a>
+
+The term &#34;DropKick&#34; is self-descriptive of its usage: Drop a hidden commitment somewhere on the blockchain, and reveal it later with an SPV-style proof to Kick&#160;(spend) your legacy coins forward to a new PQ-secure wallet.
+
+Background
+
+As with any post-quantum commit/reveal protocol, DropKick uses the blockchain as a trustless timestamping service to prove than an honest user had earlier chronological knowledge of some secret witness&#160;to a quantum-hard one-way function. The honest user hides a commitment in a block, waits for confirmations, and later reveals&#160;her commitment to certify she knew the secret witness long before an adversary (like a quantum computer) could have done so. Assuming this witness was indeed kept secret prior to reveal time, it is already too late for the adversary to forge an equivalent proof.
+
+
+This general mechanism also allows validators to distinguish an honest bitcoin-holding procrastinator from a CRQC in many situations, and so procrastinators can still authorize spending of their legacy UTXOs even well after Q-day, provided the rescue protocol is deployed&#160;before&#160;Q-day as a new encumbrance on affected legacy coins.
+DropKick In One Paragraph
+
+DropKick specifically is a&#160;commit/reveal protocol where the commitment&#160;`H(H(w, Q), Q)` is hidden somewhere in a block, such as an OP_RETURN or inside a taproot tweak.&#160;`Q` is a post-quantum public key, and `w`&#160;is the witness to a one-way function `f`, such that `s = f(x)` is the script pubkey (address) encumbering a coin. We can later reveal the witness `w` and a signature from pubkey&#160;`Q` to authorize a spend, along with an opening proof&#160;showing that the commitment was included in a prior block. The verifier checks the commitment opening is valid and sufficiently old, checks `s = f(x)`, and verifies the PQ-signature from `Q`.
+
+See this section for the actual proving/verifying steps of the protocol.
+
+Features
+
+
+Generality:&#160;DropKick generalizes to any efficient [1]&#160;one-way function based on knowledge asymmetries - things the honest user knows which the adversary doesn&#39;t.&#160;In the context of Bitcoin, the one-way function would typically be a computational pipeline that includes hashing of secret data unknown to a CRQC, such as &#34;BIP32 hardened derivation of an address&#34; or &#34;hashing a public key or script to build an address&#34; or &#34;taproot key tweaking&#34;. DropKick can be instantiated with different one-way functions to encumber different coins.
+
+
+Compatibility: DropKick can be deployed as a soft-fork, as it only tightens spending validation rules, and does so only on certain UTXOs.
+
+Confiscation: DropKick can be deployed without&#160;confiscating any coins, if so desired, by deploying it as an encumbrance only on UTXOs with&#160;decidable&#160;knowledge asymmetries like hashed addresses (see this section). If one wishes to maximize the number of legacy coins rescued, DropKick can also be deployed on undecidable&#160;knowledge asymmetries like BIP32-CKD. To be clear, P2PK&#160;coins cannot be covered by DropKick or indeed by any rescue protocol, as these UTXOs have no known knowledge asymmetries when a CRQC is in play.
+
+Blockspace Efficiency: DropKick has near zero on-chain impact until reveal time, at which point the commitment opening proofs are included in a reveal transaction&#160;spending the legacy coins. Opening proofs could be attached in an OP_RETURN for backwards compatibility, or for better efficiency the proofs could be attached in a new transaction witness field which would allow for the 4x segwit discount to apply. DropKick opening proofs are approximately the same size as SPV or OpenTimestamps proofs (less than a kilobyte) and those proofs can be reused to rescue multiple related UTXOs, e.g. coins on the same address, or coins on addresses derived from the same seed.
+
+Performance: DropKick opening proofs cost very little to verify: a few hash invocations, about as fast to verify as an SPV proof or lamport signature of the same size, and the cost of verification scales linearly with the size of the proof. If one has&#160;`txindex=1` enabled, verification is even faster.&#160;The only prerequisite data needed to verify the opening proof is the set of all Bitcoin block headers.&#160;Verifying the revealed witness `w`&#160;is exactly as efficient as evaluating the one-way function `f(w)`.
+
+
+Ergonomics:&#160;Procrastinator do not need to have their own PQ-safe UTXOs available to execute a DropKick rescue: Users can delegate their commitments to untrusted third party servers called &#34;aggregators&#34; who do&#160;have PQ-safe UTXOs. These servers take it upon themselves to aggregate the commitments of other users together into a merkle tree, whose root they publish on-chain. Those aggregators can charge a salvage fee for their services if desired, paid in-band from the rescued UTXOs, or up-front&#160;out-of-band.&#160;Procrastinators can shop between different aggregators, and anyone with PQ-safe UTXOs can operate one.
+
+Comparison to Lifeboat
+
+DropKick competes directly with Tadge Dryja&#39;s Lifeboat/Lifejacket proposal&#160;(also see this older post), but DropKick aims for a different (lower) degree of security in exchange for a simpler implementation surface, more flexibility, and better efficiency.
+
+The two protocols fulfill functionally similar roles, so I will take a moment to compare and contrast DropKick and Lifeboat/Lifejacket.
+
+DropKick includes some novel features which Lifeboat does not, such as key certification (allowing things like RBF, or equivocation, by the honest spender), or generalization to arbitrary one-way functions. Such developments could be easily transferred to Lifeboat as well, so I will mostly ignore these minor differences here.
+
+The fundamental difference between DropKick and Lifeboat is the commitment ordering requirement.
+
+
+-   Lifeboat requires procrastinators to (1) procure a PQ-secure UTXO, and (2) upload a ~96-byte commitment in-the-clear in a new transaction, such as in an OP_RETURN or inscription. Validators must index all such commitments, so that they can chronologically order&#160;the revealed commitments later. Reveals reference this index to authorize spending: Only the&#160;earliest valid commitment for a given witness is allowed to spend the legacy coin that witness unlocks.
+    
+
+-   DropKick encourages procrastinators to hide&#160;commitments in merkle trees committed into blocks, such as via a merkle root posted in an OP_RETURN, or in a taproot-style key tweak. Reveals use SPV-style proofs to convince validators that the commitment was included in a past block. Validators therefore do not (and cannot) index all commitments, and so there is no way to confirm any one commitment was earliest.
+
+
+
+By dropping the commitment ordering requirement, DropKick skips the need for a new index database collecting all the commitments, and this frees us from putting commitments on chain in-the-clear. DropKick commitments can be hidden off-chain, but anchored to the chain in merkle trees of arbitrary size, which is the key feature that enables the new role of aggregators, and means procrastinators don&#39;t need PQ-UTXOs to publish a commitment and rescue their legacy coins.
+
+To gain these benefits, DropKick sacrifices some security, by admitting&#160;miner censorship attacks&#160;where miners can intentionally censor a reveal transaction to gain a chance to steal the procrastinator&#39;s coins. Lifeboat entirely avoids this class of attacks, whereas DropKick requires a somewhat loose game-theoretical argument that miners will converge on choosing not&#160;to censor reveals, provided we enforce a long delay (days or weeks) between commitment and reveal steps, and provided the procrastinator pays a proportional fee to incentivize honest miners. We also have to assume no 51% reorg attacks of course, as a malicious hashrate majority could easily censor any reveal transactions and so steal coins.
+
+However, if this security loss is acceptable, DropKick offers a much simpler and less complex engineering surface area, and supports rescuing users in more diverse situations than LifeBoat can (because PQ UTXOs are mandatory in Lifeboat).
+
+LifeBoat&#39;s UX advantage over DropKick is that because of the ordering, there is no long delay or value-proportional fee needed: Users only need to wait a few blocks between commit&#160;and reveal&#160;stages, and they pay only regular mining fees as usual. DropKick OTOH requires a delay proportional to the fraction of the UTXO one is willing to sacrifice to miners. E.g. if we assume users are willing to sacrifice 1% of their UTXOs, then we need to enforce a reveal delay period of at least 100 blocks. See here for a derivation of these parameters.&#160;
+
+Conclusion
+
+So that&#39;s it.
+
+I&#39;m submitting DropKick here as a sketch for consideration, not as a concrete proposal. I am most interested to know if anyone can think of a better mechanism to avoid miner censorship attacks, or if we can at least reduce the strength of the assumptions needed for DropKick to resist them.
+
+regards,
+conduition
+
+
+[1]: The one-way function must be efficient&#160;so that verifiers can recompute it to validate reveal transactions without DoS risks. For example, BIP32 master key derivation via BIP39 is not considered efficient because it uses PBKDF2, whereas BIP32 CKD is efficient if restricted to a maximum derivation depth.
+
+-- 
+You received this message because you are subscribed to the Google Groups &#34;Bitcoin Development Mailing List&#34; group.
+To unsubscribe from this group and stop receiving emails from it, send an email to bitcoindev+unsubscribe@googlegroups&#8226;com.
+To view this discussion visit <a
+href="https://groups.google.com/d/msgid/bitcoindev/ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo%3D%40proton.me">https://groups.google.com/d/msgid/bitcoindev/ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo%3D%40proton.me</a>.
+
+<a
+href="../../ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo=@proton.me/1.1.2.1-a.bin">[-- Attachment #1.1.2.1: Type: text/html, Size: 18262 bytes --]</a>
+
+<a
+href="../../ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo=@proton.me/1.2-a.bin">[-- Attachment #1.2: publickey - conduition@proton.me - 0x474891AD.asc --]
+[-- Type: application/pgp-keys, Size: 649 bytes --]</a>
+
+<a
+href="../../ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo=@proton.me/2-signature.asc">[-- Attachment #2: OpenPGP digital signature --]
+[-- Type: application/pgp-signature, Size: 343 bytes --]</a>
+
+<a
+href=#m984f22f8a646298cfe2ad2461916f5ff1043c858
+id=e984f22f8a646298cfe2ad2461916f5ff1043c858>^</a> <a
+href="../../ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo=@proton.me/">permalink</a> <a
+href="../../ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo=@proton.me/raw">raw</a> <a
+href="../../ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo=@proton.me/#R">reply</a>	[<a
+href="../../ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo=@proton.me/T/#u"><b>flat</b></a>|<a
+href="../../ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo=@proton.me/t/#u">nested</a>] <a
+href=#r984f22f8a646298cfe2ad2461916f5ff1043c858>3+ messages in thread</a></pre><hr><pre><a
+href=#efa1857336e77db8f1b71e94d042094ffbaa2226a
+id=mfa1857336e77db8f1b71e94d042094ffbaa2226a>*</a> <b>Re: [bitcoindev] DropKick &#9917;&#65039; - A minimal commit/reveal PQ rescue protocol</b>
+  2026-08-20 21:30 <a
+href="#m984f22f8a646298cfe2ad2461916f5ff1043c858">[bitcoindev] DropKick &#9917;&#65039; - A minimal commit/reveal PQ rescue protocol</a> &#39;conduition&#39; via Bitcoin Development Mailing List
+<b>@ 2026-08-22 17:46 ` Alex</b>
+  2026-08-23 23:28   ` <a
+href="#mc5a9a52fd0690f00b809cfc93179e52c57ac2fd2">&#39;conduition&#39; via Bitcoin Development Mailing List</a>
+  <a
+href=#rfa1857336e77db8f1b71e94d042094ffbaa2226a>0 siblings, 1 reply; 3+ messages in thread</a>
+From: Alex @ 2026-08-22 17:46 UTC (<a
+href="../../CAHPaHkr5r4+hodZv6F2S1yCq_UcHSr2iCrkYLgZ_vryNgwbRPA@mail.gmail.com/">permalink</a> / <a
+href="../../CAHPaHkr5r4+hodZv6F2S1yCq_UcHSr2iCrkYLgZ_vryNgwbRPA@mail.gmail.com/raw">raw</a>)
+  To: conduition; <b>+Cc:</b> bitcoindev
+
+<a
+href="../../CAHPaHkr5r4+hodZv6F2S1yCq_UcHSr2iCrkYLgZ_vryNgwbRPA@mail.gmail.com/1-a.txt">[-- Attachment #1: Type: text/plain, Size: 12271 bytes --]</a>
+
+Am I correct in understanding that commit/reveal always depends on someone
+else already having a valid PQC UTXO to spend?
+
+So in other words, this can never be a solution for a (procrastinating
+Bitcoin system), only a solution for (procrastinating Bitcoin users).
+
+We need to have an already functioning PQC solution for Bitcoin itself,
+deployed, before any of commit/reveal can help, right?
+
+Den tors 20 aug. 2026 23:56&#39;conduition&#39; via Bitcoin Development Mailing
+List &lt;bitcoindev@googlegroups.com&gt; skrev:
+
+<span
+class="q">&gt; Dearest friends, colleagues, and lurkers,
+&gt;
+&gt; I would like to present for your consideration a new commit/reveal rescue
+&gt; protocol to save the coins of quantum procrastinators - those who take no
+&gt; action to move their coins to PQC-enabled wallets by Q-Day.
+&gt;
+&gt; <a
+href="https://conduition.io/bitcoin/dropkick/">https://conduition.io/bitcoin/dropkick/</a>
+&gt;
+&gt; The term &#34;DropKick&#34; is self-descriptive of its usage: *Drop* a hidden
+&gt; commitment somewhere on the blockchain, and reveal it later with an
+&gt; SPV-style proof to *Kick* (spend) your legacy coins forward to a new
+&gt; PQ-secure wallet.
+&gt;
+&gt; Background
+&gt;
+&gt; As with any post-quantum commit/reveal protocol, DropKick uses the
+&gt; blockchain as a trustless timestamping service to prove than an honest user
+&gt; had earlier chronological knowledge of some secret *witness* to a
+&gt; quantum-hard* one-way function*. The honest user hides a *commitment* in
+&gt; a block, waits for confirmations, and later *reveals* her commitment to
+&gt; certify she knew the secret witness long before an adversary (like a
+&gt; quantum computer) could have done so. Assuming this witness was indeed kept
+&gt; secret prior to reveal time, it is already too late for the adversary to
+&gt; forge an equivalent proof.
+&gt;
+&gt;
+&gt; This general mechanism also allows validators to distinguish an honest
+&gt; bitcoin-holding procrastinator from a CRQC in many situations, and so
+&gt; procrastinators can still authorize spending of their legacy UTXOs even
+&gt; well after Q-day, provided the rescue protocol is deployed *before* Q-day
+&gt; as a new encumbrance on affected legacy coins.
+&gt;
+&gt; DropKick In One Paragraph
+&gt;
+&gt; DropKick specifically is a commit/reveal protocol where the commitment H(H(w,
+&gt; Q), Q)&#8203; is hidden somewhere in a block, such as an OP_RETURN or inside a
+&gt; taproot tweak. Q&#8203; is a post-quantum public key, and w&#8203; is the witness to
+&gt; a one-way function f&#8203;, such that s = f(x)&#8203; is the script pubkey (address)
+&gt; encumbering a coin. We can later reveal the witness w&#8203; and a signature
+&gt; from pubkey Q&#8203; to authorize a spend, along with an *opening proof* showing
+&gt; that the commitment was included in a prior block. The verifier checks the
+&gt; commitment opening is valid and sufficiently old, checks s = f(x)&#8203;, and
+&gt; verifies the PQ-signature from Q&#8203;.
+&gt;
+&gt; See this section for the actual proving/verifying steps of the protocol.
+&gt; &lt;<a
+href="https://conduition.io/bitcoin/dropkick/#DropKick">https://conduition.io/bitcoin/dropkick/#DropKick</a>&gt;
+&gt;
+&gt; Features
+&gt;
+&gt; *Generality:* DropKick generalizes to any *efficient *[1] one-way
+&gt; function based on knowledge asymmetries - things the honest user knows
+&gt; which the adversary doesn&#39;t. In the context of Bitcoin, the one-way
+&gt; function would typically be a computational pipeline that includes hashing
+&gt; of secret data unknown to a CRQC, such as &#34;BIP32 hardened derivation of an
+&gt; address&#34; or &#34;hashing a public key or script to build an address&#34; or
+&gt; &#34;taproot key tweaking&#34;. DropKick can be instantiated with different one-way
+&gt; functions to encumber different coins.
+&gt;
+&gt; *Compatibility:* DropKick can be deployed as a soft-fork, as it only
+&gt; *tightens* spending validation rules, and does so only on certain UTXOs.
+&gt;
+&gt; *Confiscation:* DropKick can be deployed *without* confiscating any
+&gt; coins, if so desired, by deploying it as an encumbrance only on UTXOs with
+&gt; *decidable* knowledge asymmetries like hashed addresses (see this section
+&gt; &lt;<a
+href="https://conduition.io/bitcoin/dropkick/#Knowledge-Asymmetries">https://conduition.io/bitcoin/dropkick/#Knowledge-Asymmetries</a>&gt;). If one
+&gt; wishes to maximize the number of legacy coins rescued, DropKick can also be
+&gt; deployed on *undecidable* knowledge asymmetries like BIP32-CKD. To be
+&gt; clear, P2PK coins cannot be covered by DropKick or indeed by any rescue
+&gt; protocol, as these UTXOs have no known knowledge asymmetries when a CRQC is
+&gt; in play.
+&gt;
+&gt; *Blockspace Efficiency:* DropKick has near zero on-chain impact until
+&gt; reveal time, at which point the commitment opening proofs are included in a *reveal
+&gt; transaction* spending the legacy coins. Opening proofs could be attached
+&gt; in an OP_RETURN for backwards compatibility, or for better efficiency the
+&gt; proofs could be attached in a new transaction witness field which would
+&gt; allow for the 4x segwit discount to apply. DropKick opening proofs are
+&gt; approximately the same size as SPV
+&gt; &lt;<a
+href="https://learnmeabitcoin.com/technical/networking/node/#lightweight-node">https://learnmeabitcoin.com/technical/networking/node/#lightweight-node</a>&gt;
+&gt; or OpenTimestamps &lt;<a
+href="https://opentimestamps.org/">https://opentimestamps.org/</a>&gt; proofs (less than a
+&gt; kilobyte) and those proofs can be reused to rescue multiple related UTXOs,
+&gt; e.g. coins on the same address, or coins on addresses derived from the same
+&gt; seed.
+&gt;
+&gt; *Performance:* DropKick opening proofs cost very little to verify: a few
+&gt; hash invocations, about as fast to verify as an SPV proof or lamport
+&gt; signature of the same size, and the cost of verification scales linearly
+&gt; with the size of the proof. If one has txindex=1&#8203; enabled, verification
+&gt; is even faster. The only prerequisite data needed to verify the opening
+&gt; proof is the set of all Bitcoin block headers. Verifying the revealed
+&gt; witness w&#8203; is exactly as efficient as evaluating the one-way function f(w)
+&gt; &#8203;.
+&gt;
+&gt; *Ergonomics: *Procrastinator *do not* need to have their own PQ-safe
+&gt; UTXOs available to execute a DropKick rescue: Users can delegate their
+&gt; commitments to untrusted third party servers called &#34;aggregators&#34; who *do* have
+&gt; PQ-safe UTXOs. These servers take it upon themselves to aggregate the
+&gt; commitments of other users together into a merkle tree, whose root they
+&gt; publish on-chain. Those aggregators can charge a salvage fee for their
+&gt; services if desired, paid in-band from the rescued UTXOs, or up-front out-of-band. Procrastinators
+&gt; can shop between different aggregators, and anyone with PQ-safe UTXOs can
+&gt; operate one.
+&gt;
+&gt; Comparison to Lifeboat
+&gt;
+&gt; DropKick competes directly with Tadge Dryja&#39;s Lifeboat/Lifejacket proposal
+&gt; &lt;<a
+href="https://www.youtube.com/watch?v=PmW90HX89P8">https://www.youtube.com/watch?v=PmW90HX89P8</a>&gt; (also see this older post
+&gt; &lt;<a
+href="https://groups.google.com/g/bitcoindev/c/LpWOcXMcvk8/">https://groups.google.com/g/bitcoindev/c/LpWOcXMcvk8/</a>&gt;), but DropKick
+&gt; aims for a different (lower) degree of security in exchange for a simpler
+&gt; implementation surface, more flexibility, and better efficiency.
+&gt;
+&gt; The two protocols fulfill functionally similar roles, so I will take a
+&gt; moment to compare and contrast DropKick and Lifeboat/Lifejacket.
+&gt;
+&gt; DropKick includes some novel features which Lifeboat does not, such as *key
+&gt; certification *(allowing things like RBF, or equivocation, by the honest
+&gt; spender), or generalization to arbitrary one-way functions. Such
+&gt; developments could be easily transferred to Lifeboat as well, so I will
+&gt; mostly ignore these minor differences here.
+&gt;
+&gt; The fundamental difference between DropKick and Lifeboat is the commitment
+&gt; ordering requirement.
+&gt;
+&gt;
+&gt;    - Lifeboat requires procrastinators to (1) procure a PQ-secure UTXO,
+&gt;    and (2) upload a ~96-byte commitment in-the-clear in a new transaction,
+&gt;    such as in an OP_RETURN or inscription. Validators must index all such
+&gt;    commitments, so that they can *chronologically order* the revealed
+&gt;    commitments later. Reveals reference this index to authorize spending: Only
+&gt;    the earliest valid commitment for a given witness is allowed to spend
+&gt;    the legacy coin that witness unlocks.
+&gt;    - DropKick encourages procrastinators to *hide* commitments in merkle
+&gt;    trees committed into blocks, such as via a merkle root posted in an
+&gt;    OP_RETURN, or in a taproot-style key tweak. Reveals use SPV-style proofs to
+&gt;    convince validators that the commitment was included in a past block. *Validators
+&gt;    therefore do not (and cannot) index all commitments, and so there is no way
+&gt;    to confirm any one commitment was earliest*.
+&gt;
+&gt;
+&gt; By dropping the commitment ordering requirement, DropKick skips the need
+&gt; for a new index database collecting all the commitments, and this frees us
+&gt; from putting commitments on chain in-the-clear. DropKick commitments can be
+&gt; hidden off-chain, but anchored to the chain in merkle trees of arbitrary
+&gt; size, which is the key feature that enables the new role of aggregators,
+&gt; and means procrastinators don&#39;t need PQ-UTXOs to publish a commitment and
+&gt; rescue their legacy coins.
+&gt;
+&gt; To gain these benefits, DropKick sacrifices some security, by admitting miner
+&gt; censorship attacks &lt;<a
+href="https://conduition.io/bitcoin/dropkick/#Censorship">https://conduition.io/bitcoin/dropkick/#Censorship</a>&gt; where
+&gt; miners can intentionally censor a reveal transaction to gain a chance to
+&gt; steal the procrastinator&#39;s coins. Lifeboat entirely avoids this class of
+&gt; attacks, whereas DropKick requires a somewhat loose game-theoretical
+&gt; argument &lt;<a
+href="https://conduition.io/bitcoin/dropkick/#Appendix-Game-Theory">https://conduition.io/bitcoin/dropkick/#Appendix-Game-Theory</a>&gt;
+&gt; that miners will converge on choosing *not* to censor reveals, provided
+&gt; we enforce a long delay (days or weeks) between commitment and reveal
+&gt; steps, and provided the procrastinator pays a proportional fee to
+&gt; incentivize honest miners. We also have to assume no 51% reorg attacks of
+&gt; course, as a malicious hashrate majority could easily censor any reveal
+&gt; transactions and so steal coins.
+&gt;
+&gt; However, if this security loss is acceptable, DropKick offers a much
+&gt; simpler and less complex engineering surface area, and supports rescuing
+&gt; users in more diverse situations than LifeBoat can (because PQ UTXOs are
+&gt; mandatory in Lifeboat).
+&gt;
+&gt; LifeBoat&#39;s UX advantage over DropKick is that because of the ordering,
+&gt; there is no long delay or value-proportional fee needed: Users only need to
+&gt; wait a few blocks between *commit* and *reveal* stages, and they pay only
+&gt; regular mining fees as usual. DropKick OTOH requires a delay proportional
+&gt; to the fraction of the UTXO one is willing to sacrifice to miners. E.g. if
+&gt; we assume users are willing to sacrifice 1% of their UTXOs, then we need to
+&gt; enforce a reveal delay period of at least 100 blocks. See here for a
+&gt; derivation of these parameters
+&gt; &lt;<a
+href="https://conduition.io/bitcoin/dropkick/#Parameters">https://conduition.io/bitcoin/dropkick/#Parameters</a>&gt;.
+&gt;
+&gt; Conclusion
+&gt;
+&gt; So that&#39;s it.
+&gt;
+&gt; I&#39;m submitting DropKick here as a sketch for consideration, not as a
+&gt; concrete proposal. I am most interested to know if anyone can think of a
+&gt; better mechanism to avoid miner censorship attacks, or if we can at least
+&gt; reduce the strength of the assumptions needed for DropKick to resist them.
+&gt;
+&gt; regards,
+&gt; conduition
+&gt;
+&gt;
+&gt; [1]: The one-way function must be *efficient* so that verifiers can
+&gt; recompute it to validate reveal transactions without DoS risks. For
+&gt; example, BIP32 master key derivation via BIP39 is not considered efficient
+&gt; because it uses PBKDF2, whereas BIP32 CKD is efficient if restricted to a
+&gt; maximum derivation depth.
+&gt;
+&gt; --
+&gt; You received this message because you are subscribed to the Google Groups
+&gt; &#34;Bitcoin Development Mailing List&#34; group.
+&gt; To unsubscribe from this group and stop receiving emails from it, send an
+&gt; email to bitcoindev+unsubscribe@googlegroups&#8226;com.
+&gt; To view this discussion visit
+&gt; <a
+href="https://groups.google.com/d/msgid/bitcoindev/ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo%3D%40proton.me">https://groups.google.com/d/msgid/bitcoindev/ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo%3D%40proton.me</a>
+&gt; &lt;<a
+href="https://groups.google.com/d/msgid/bitcoindev/ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo%3D%40proton.me?utm_medium=email&#38;utm_source=footer">https://groups.google.com/d/msgid/bitcoindev/ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo%3D%40proton.me?utm_medium=email&#38;utm_source=footer</a>&gt;
+&gt; .
+&gt;
+</span>
+-- 
+You received this message because you are subscribed to the Google Groups &#34;Bitcoin Development Mailing List&#34; group.
+To unsubscribe from this group and stop receiving emails from it, send an email to bitcoindev+unsubscribe@googlegroups&#8226;com.
+To view this discussion visit <a
+href="https://groups.google.com/d/msgid/bitcoindev/CAHPaHkr5r4%2BhodZv6F2S1yCq_UcHSr2iCrkYLgZ_vryNgwbRPA%40mail.gmail.com">https://groups.google.com/d/msgid/bitcoindev/CAHPaHkr5r4%2BhodZv6F2S1yCq_UcHSr2iCrkYLgZ_vryNgwbRPA%40mail.gmail.com</a>.
+
+<a
+href="../../CAHPaHkr5r4+hodZv6F2S1yCq_UcHSr2iCrkYLgZ_vryNgwbRPA@mail.gmail.com/2-a.bin">[-- Attachment #2: Type: text/html, Size: 18995 bytes --]</a>
+
+<a
+href=#mfa1857336e77db8f1b71e94d042094ffbaa2226a
+id=efa1857336e77db8f1b71e94d042094ffbaa2226a>^</a> <a
+href="../../CAHPaHkr5r4+hodZv6F2S1yCq_UcHSr2iCrkYLgZ_vryNgwbRPA@mail.gmail.com/">permalink</a> <a
+href="../../CAHPaHkr5r4+hodZv6F2S1yCq_UcHSr2iCrkYLgZ_vryNgwbRPA@mail.gmail.com/raw">raw</a> <a
+href="../../CAHPaHkr5r4+hodZv6F2S1yCq_UcHSr2iCrkYLgZ_vryNgwbRPA@mail.gmail.com/#R">reply</a>	[<a
+href="../../CAHPaHkr5r4+hodZv6F2S1yCq_UcHSr2iCrkYLgZ_vryNgwbRPA@mail.gmail.com/T/#u"><b>flat</b></a>|<a
+href="../../CAHPaHkr5r4+hodZv6F2S1yCq_UcHSr2iCrkYLgZ_vryNgwbRPA@mail.gmail.com/t/#u">nested</a>] <a
+href=#rfa1857336e77db8f1b71e94d042094ffbaa2226a>3+ messages in thread</a></pre><hr><pre><a
+href=#ec5a9a52fd0690f00b809cfc93179e52c57ac2fd2
+id=mc5a9a52fd0690f00b809cfc93179e52c57ac2fd2>*</a> <u
+id=u><b>Re: [bitcoindev] DropKick &#9917;&#65039; - A minimal commit/reveal PQ rescue protocol</b></u>
+  2026-08-22 17:46 ` <a
+href="#mfa1857336e77db8f1b71e94d042094ffbaa2226a">Alex</a>
+<b>@ 2026-08-23 23:28   ` &#39;conduition&#39; via Bitcoin Development Mailing List</b>
+  <a
+href=#rc5a9a52fd0690f00b809cfc93179e52c57ac2fd2>0 siblings, 0 replies; 3+ messages in thread</a>
+From: &#39;conduition&#39; via Bitcoin Development Mailing List @ 2026-08-23 23:28 UTC (<a
+href="../../O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8=@proton.me/">permalink</a> / <a
+href="../../O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8=@proton.me/raw">raw</a>)
+  To: Alex; <b>+Cc:</b> bitcoindev
+
+
+<a
+href="../../O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8=@proton.me/1.1.1-a.txt">[-- Attachment #1.1.1: Type: text/plain, Size: 12131 bytes --]</a>
+
+Hi Alex,
+
+
+<span
+class="q">&gt; We need to have an already functioning PQC solution for Bitcoin itself, deployed, before any of commit/reveal can help, right?
+</span>
+
+Yes. Two reasons:
+
+First, without on-chain PQC, making commitments would be impossible to do safely unless commitment are aggregated directly by miners into the coinbase transaction.
+
+Second, without on-chain PQ-secure addresses, where would one even rescue coins to? Commit/reveal protocols are meant as a tool saving coins in an emergency, not for everyday spending.
+
+
+PQ signature schemes are therefore needed as a prerequisite.
+
+
+regards,
+conduition
+On Saturday, August 22nd, 2026 at 1:46 PM, Alex &lt;alexhultman@gmail&#8226;com&gt; wrote:
+
+<span
+class="q">&gt; Am I correct in understanding that commit/reveal always depends on someone else already having a valid PQC UTXO to spend?
+&gt; So in other words, this can never be a solution for a (procrastinating Bitcoin system), only a solution for (procrastinating Bitcoin users).
+&gt; 
+</span>
+<span
+class="q">&gt; We need to have an already functioning PQC solution for Bitcoin itself, deployed, before any of commit/reveal can help, right?
+&gt; 
+</span>
+<span
+class="q">&gt; Den tors 20 aug. 2026 23:56&#39;conduition&#39; via Bitcoin Development Mailing List &lt;bitcoindev@googlegroups.com&gt; skrev:
+&gt; 
+</span>
+<span
+class="q">&gt; &gt; Dearest friends, colleagues, and lurkers,
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; I would like to present for your consideration a new commit/reveal rescue protocol to save the coins of quantum procrastinators - those who take no action to move their coins to PQC-enabled wallets by Q-Day.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; <a
+href="https://conduition.io/bitcoin/dropkick/">https://conduition.io/bitcoin/dropkick/</a>
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; The term &#34;DropKick&#34; is self-descriptive of its usage: Drop a hidden commitment somewhere on the blockchain, and reveal it later with an SPV-style proof to Kick (spend) your legacy coins forward to a new PQ-secure wallet.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; Background
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; As with any post-quantum commit/reveal protocol, DropKick uses the blockchain as a trustless timestamping service to prove than an honest user had earlier chronological knowledge of some secret witness to a quantum-hard one-way function. The honest user hides a commitment in a block, waits for confirmations, and later reveals her commitment to certify she knew the secret witness long before an adversary (like a quantum computer) could have done so. Assuming this witness was indeed kept secret prior to reveal time, it is already too late for the adversary to forge an equivalent proof.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; This general mechanism also allows validators to distinguish an honest bitcoin-holding procrastinator from a CRQC in many situations, and so procrastinators can still authorize spending of their legacy UTXOs even well after Q-day, provided the rescue protocol is deployed before Q-day as a new encumbrance on affected legacy coins.
+&gt; &gt; DropKick In One Paragraph
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; DropKick specifically is a commit/reveal protocol where the commitment `H(H(w, Q), Q)` is hidden somewhere in a block, such as an OP_RETURN or inside a taproot tweak. `Q` is a post-quantum public key, and `w` is the witness to a one-way function `f`, such that `s = f(x)` is the script pubkey (address) encumbering a coin. We can later reveal the witness `w` and a signature from pubkey `Q` to authorize a spend, along with an opening proof showing that the commitment was included in a prior block. The verifier checks the commitment opening is valid and sufficiently old, checks `s = f(x)`, and verifies the PQ-signature from `Q`.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; See this section for the actual proving/verifying steps of the protocol.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; Features
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; Generality: DropKick generalizes to any efficient [1] one-way function based on knowledge asymmetries - things the honest user knows which the adversary doesn&#39;t. In the context of Bitcoin, the one-way function would typically be a computational pipeline that includes hashing of secret data unknown to a CRQC, such as &#34;BIP32 hardened derivation of an address&#34; or &#34;hashing a public key or script to build an address&#34; or &#34;taproot key tweaking&#34;. DropKick can be instantiated with different one-way functions to encumber different coins.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; Compatibility: DropKick can be deployed as a soft-fork, as it only tightens spending validation rules, and does so only on certain UTXOs.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; Confiscation: DropKick can be deployed without confiscating any coins, if so desired, by deploying it as an encumbrance only on UTXOs with decidable knowledge asymmetries like hashed addresses (see this section). If one wishes to maximize the number of legacy coins rescued, DropKick can also be deployed on undecidable knowledge asymmetries like BIP32-CKD. To be clear, P2PK coins cannot be covered by DropKick or indeed by any rescue protocol, as these UTXOs have no known knowledge asymmetries when a CRQC is in play.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; Blockspace Efficiency: DropKick has near zero on-chain impact until reveal time, at which point the commitment opening proofs are included in a reveal transaction spending the legacy coins. Opening proofs could be attached in an OP_RETURN for backwards compatibility, or for better efficiency the proofs could be attached in a new transaction witness field which would allow for the 4x segwit discount to apply. DropKick opening proofs are approximately the same size as SPV or OpenTimestamps proofs (less than a kilobyte) and those proofs can be reused to rescue multiple related UTXOs, e.g. coins on the same address, or coins on addresses derived from the same seed.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; Performance: DropKick opening proofs cost very little to verify: a few hash invocations, about as fast to verify as an SPV proof or lamport signature of the same size, and the cost of verification scales linearly with the size of the proof. If one has `txindex=1` enabled, verification is even faster. The only prerequisite data needed to verify the opening proof is the set of all Bitcoin block headers. Verifying the revealed witness `w` is exactly as efficient as evaluating the one-way function `f(w)`.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; Ergonomics: Procrastinator do not need to have their own PQ-safe UTXOs available to execute a DropKick rescue: Users can delegate their commitments to untrusted third party servers called &#34;aggregators&#34; who do have PQ-safe UTXOs. These servers take it upon themselves to aggregate the commitments of other users together into a merkle tree, whose root they publish on-chain. Those aggregators can charge a salvage fee for their services if desired, paid in-band from the rescued UTXOs, or up-front out-of-band. Procrastinators can shop between different aggregators, and anyone with PQ-safe UTXOs can operate one.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; Comparison to Lifeboat
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; DropKick competes directly with Tadge Dryja&#39;s Lifeboat/Lifejacket proposal (also see this older post), but DropKick aims for a different (lower) degree of security in exchange for a simpler implementation surface, more flexibility, and better efficiency.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; The two protocols fulfill functionally similar roles, so I will take a moment to compare and contrast DropKick and Lifeboat/Lifejacket.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; DropKick includes some novel features which Lifeboat does not, such as key certification (allowing things like RBF, or equivocation, by the honest spender), or generalization to arbitrary one-way functions. Such developments could be easily transferred to Lifeboat as well, so I will mostly ignore these minor differences here.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; The fundamental difference between DropKick and Lifeboat is the commitment ordering requirement.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; -   Lifeboat requires procrastinators to (1) procure a PQ-secure UTXO, and (2) upload a ~96-byte commitment in-the-clear in a new transaction, such as in an OP_RETURN or inscription. Validators must index all such commitments, so that they can chronologically order the revealed commitments later. Reveals reference this index to authorize spending: Only the earliest valid commitment for a given witness is allowed to spend the legacy coin that witness unlocks.
+&gt; &gt;     
+</span>
+<span
+class="q">&gt; &gt; -   DropKick encourages procrastinators to hide commitments in merkle trees committed into blocks, such as via a merkle root posted in an OP_RETURN, or in a taproot-style key tweak. Reveals use SPV-style proofs to convince validators that the commitment was included in a past block. Validators therefore do not (and cannot) index all commitments, and so there is no way to confirm any one commitment was earliest.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; By dropping the commitment ordering requirement, DropKick skips the need for a new index database collecting all the commitments, and this frees us from putting commitments on chain in-the-clear. DropKick commitments can be hidden off-chain, but anchored to the chain in merkle trees of arbitrary size, which is the key feature that enables the new role of aggregators, and means procrastinators don&#39;t need PQ-UTXOs to publish a commitment and rescue their legacy coins.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; To gain these benefits, DropKick sacrifices some security, by admitting miner censorship attacks where miners can intentionally censor a reveal transaction to gain a chance to steal the procrastinator&#39;s coins. Lifeboat entirely avoids this class of attacks, whereas DropKick requires a somewhat loose game-theoretical argument that miners will converge on choosing not to censor reveals, provided we enforce a long delay (days or weeks) between commitment and reveal steps, and provided the procrastinator pays a proportional fee to incentivize honest miners. We also have to assume no 51% reorg attacks of course, as a malicious hashrate majority could easily censor any reveal transactions and so steal coins.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; However, if this security loss is acceptable, DropKick offers a much simpler and less complex engineering surface area, and supports rescuing users in more diverse situations than LifeBoat can (because PQ UTXOs are mandatory in Lifeboat).
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; LifeBoat&#39;s UX advantage over DropKick is that because of the ordering, there is no long delay or value-proportional fee needed: Users only need to wait a few blocks between commit and reveal stages, and they pay only regular mining fees as usual. DropKick OTOH requires a delay proportional to the fraction of the UTXO one is willing to sacrifice to miners. E.g. if we assume users are willing to sacrifice 1% of their UTXOs, then we need to enforce a reveal delay period of at least 100 blocks. See here for a derivation of these parameters.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; Conclusion
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; So that&#39;s it.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; I&#39;m submitting DropKick here as a sketch for consideration, not as a concrete proposal. I am most interested to know if anyone can think of a better mechanism to avoid miner censorship attacks, or if we can at least reduce the strength of the assumptions needed for DropKick to resist them.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; regards,
+&gt; &gt; conduition
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; [1]: The one-way function must be efficient so that verifiers can recompute it to validate reveal transactions without DoS risks. For example, BIP32 master key derivation via BIP39 is not considered efficient because it uses PBKDF2, whereas BIP32 CKD is efficient if restricted to a maximum derivation depth.
+&gt; &gt; 
+</span>
+<span
+class="q">&gt; &gt; --
+&gt; &gt; You received this message because you are subscribed to the Google Groups &#34;Bitcoin Development Mailing List&#34; group.
+&gt; &gt; To unsubscribe from this group and stop receiving emails from it, send an email to bitcoindev+unsubscribe@googlegroups&#8226;com.
+&gt; &gt; To view this discussion visit <a
+href="https://groups.google.com/d/msgid/bitcoindev/ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo%3D%40proton.me">https://groups.google.com/d/msgid/bitcoindev/ruufSzDPIml1W5hF-m_IJLeBzuhqey6CGe7-zT1WwY4vlhVj_5NJTSalz43T4ZlZgXs3sDesW61FaU_asfj39Ri1QgSXtz7-OekEt6bbTvo%3D%40proton.me</a>.
+</span>
+-- 
+You received this message because you are subscribed to the Google Groups &#34;Bitcoin Development Mailing List&#34; group.
+To unsubscribe from this group and stop receiving emails from it, send an email to bitcoindev+unsubscribe@googlegroups&#8226;com.
+To view this discussion visit <a
+href="https://groups.google.com/d/msgid/bitcoindev/O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8%3D%40proton.me">https://groups.google.com/d/msgid/bitcoindev/O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8%3D%40proton.me</a>.
+
+<a
+href="../../O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8=@proton.me/1.1.2.1-a.bin">[-- Attachment #1.1.2.1: Type: text/html, Size: 21428 bytes --]</a>
+
+<a
+href="../../O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8=@proton.me/1.2-a.bin">[-- Attachment #1.2: publickey - conduition@proton.me - 0x474891AD.asc --]
+[-- Type: application/pgp-keys, Size: 649 bytes --]</a>
+
+<a
+href="../../O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8=@proton.me/2-signature.asc">[-- Attachment #2: OpenPGP digital signature --]
+[-- Type: application/pgp-signature, Size: 343 bytes --]</a>
+
+<a
+href=#mc5a9a52fd0690f00b809cfc93179e52c57ac2fd2
+id=ec5a9a52fd0690f00b809cfc93179e52c57ac2fd2>^</a> <a
+href="../../O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8=@proton.me/">permalink</a> <a
+href="../../O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8=@proton.me/raw">raw</a> <a
+href="../../O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8=@proton.me/#R">reply</a>	[<a
+href="../../O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8=@proton.me/T/#u"><b>flat</b></a>|<a
+href="../../O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8=@proton.me/t/#u">nested</a>] <a
+href=#rc5a9a52fd0690f00b809cfc93179e52c57ac2fd2>3+ messages in thread</a></pre><hr><pre>end of thread, other threads:[<a
+href="../../?t=20260823235809">~2026-08-23 23:58 UTC</a> | <a
+href="../../">newest</a>]
+
+<b
+id=t>Thread overview:</b> 3+ messages (download: <a
+href="../t.mbox.gz">mbox.gz</a> / follow: <a
+href="../t.atom">Atom feed</a>)
+-- links below jump to the message on this page --
+2026-08-20 21:30 <a
+href="#m984f22f8a646298cfe2ad2461916f5ff1043c858"
+id=r984f22f8a646298cfe2ad2461916f5ff1043c858>[bitcoindev] DropKick &#9917;&#65039; - A minimal commit/reveal PQ rescue protocol</a> &#39;conduition&#39; via Bitcoin Development Mailing List
+2026-08-22 17:46 ` <a
+href="#mfa1857336e77db8f1b71e94d042094ffbaa2226a"
+id=rfa1857336e77db8f1b71e94d042094ffbaa2226a>Alex</a>
+2026-08-23 23:28   ` <a
+href="#mc5a9a52fd0690f00b809cfc93179e52c57ac2fd2"
+id=rc5a9a52fd0690f00b809cfc93179e52c57ac2fd2>&#39;conduition&#39; via Bitcoin Development Mailing List</a>
+</pre><hr><pre>This is a public inbox, see <a
+href="../../_/text/mirror/">mirroring instructions</a>
+for how to clone and mirror all data and code used for this inbox</pre></body></html>

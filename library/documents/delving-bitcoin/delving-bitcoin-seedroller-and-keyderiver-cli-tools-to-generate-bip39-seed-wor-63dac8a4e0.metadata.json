@@ -1,0 +1,45 @@
+{
+  "abstract": "Seedroller and keyderiver: cli tools to generate BIP39 seed words and derive BIP380 keys",
+  "authors": [
+    "bubb1es",
+    "Anzus"
+  ],
+  "bitcoin_topics": [
+    "protocol-development",
+    "consensus",
+    "wallets"
+  ],
+  "canonical_url": "https://delvingbitcoin.org/t/seedroller-and-keyderiver-cli-tools-to-generate-bip39-seed-words-and-derive-bip380-keys/2822",
+  "collection": "delving-bitcoin",
+  "content_file": "delving-bitcoin-seedroller-and-keyderiver-cli-tools-to-generate-bip39-seed-wor-63dac8a4e0.md",
+  "id": "delving-bitcoin-seedroller-and-keyderiver-cli-tools-to-generate-bip39-seed-wor-63dac8a4e0",
+  "license": "Public forum posts remain author-owned unless a post states otherwise. Store a local research snapshot with attribution; no redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public forum posts remain author-owned unless a post states otherwise. Store a local research snapshot with attribution; no redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "application/json",
+    "fetched_url": "https://delvingbitcoin.org/t/seedroller-and-keyderiver-cli-tools-to-generate-bip39-seed-words-and-derive-bip380-keys/2822.json",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/delving-bitcoin/delving-bitcoin-seedroller-and-keyderiver-cli-tools-to-generate-bip39-seed-wor-63dac8a4e0.json",
+    "retrieved_at": "2026-08-24T21:52:39Z",
+    "sha256": "c11a525b04db0deb374e1b19a9615832d209fd5e26c10806376e8f4c1795a188"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/delving-bitcoin.json",
+  "source_type": "article",
+  "tags": [
+    "delving-bitcoin",
+    "technical-discussion",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Seedroller and keyderiver: cli tools to generate BIP39 seed words and derive BIP380 keys"
+}

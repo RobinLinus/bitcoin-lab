@@ -1,0 +1,150 @@
+<html><head><title>public-inbox help for https://gnusha.org/pi/bitcoindev/</title><link
+rel=alternate
+title="Atom feed"
+href="../../../new.atom"
+type="application/atom+xml"/><style>pre{white-space:pre-wrap}*{font-size:100%;font-family:monospace}</style></head><body><form
+action="../../../"><pre><a
+href="../../../"><b>public inbox for bitcoindev@googlegroups.com</b></a>
+<input
+name=q
+type=text /><input
+type=submit
+value=search /> <a
+href="../../../_/text/help/">help</a> / <a
+href="../../../_/text/color/">color</a> / <a
+id=mirror
+href="../../../_/text/mirror/">mirror</a> / <a
+href="../../../new.atom">Atom feed</a></pre></form><pre>public-inbox help for <a
+href="https://gnusha.org/pi/bitcoindev/">https://gnusha.org/pi/bitcoindev/</a>
+
+overview
+--------
+
+  public-inbox uses Message-ID identifiers in URLs.
+  One may look up messages by substituting Message-IDs
+  (without the leading &#39;&lt;&#39; or trailing &#39;&gt;&#39;) into the URL.
+  Forward slash (&#39;/&#39;) characters in the Message-IDs
+  need to be escaped as &#34;%2F&#34; (without quotes).
+
+  Thus, it is possible to retrieve any message by its
+  Message-ID by going to:
+
+    <a
+href="https://gnusha.org/pi/bitcoindev/">https://gnusha.org/pi/bitcoindev/</a>&lt;Message-ID&gt;/
+    (without the &#39;&lt;&#39; or &#39;&gt;&#39;)
+
+  Message-IDs are described at:
+
+    <a
+href="https://en.wikipedia.org/wiki/Message-ID">https://en.wikipedia.org/wiki/Message-ID</a>
+
+search
+------
+
+  This public-inbox has search functionality provided by Xapian.
+
+  It supports typical AND, OR, NOT, &#39;+&#39;, &#39;-&#39; queries present
+  in other search engines.
+
+  We also support search prefixes to limit the scope of the
+  search to certain fields.
+
+  Prefixes supported in this installation include:
+
+    s:        match within Subject  e.g. s:&#34;a quick brown fox&#34;
+    d:        match date-time range, git &#34;approxidate&#34; formats supported
+              Open-ended ranges such as `d:last.week..&#39; and
+              `d:..2.days.ago&#39; are supported
+    b:        match within message body, including text attachments
+    nq:       match non-quoted text within message body
+    q:        match quoted text within message body
+    n:        match filename of attachment(s)
+    t:        match within the To header
+    c:        match within the Cc header
+    f:        match within the From header
+    a:        match within the To, Cc, and From headers
+    tc:       match within the To and Cc headers
+    l:        match contents of the List-Id header
+    bs:       match within the Subject and body
+    dfn:      match filename from diff
+    dfa:      match diff removed (-) lines
+    dfb:      match diff added (+) lines
+    dfhh:     match diff hunk header context (usually a function name)
+    dfctx:    match diff context lines
+    dfpre:    match pre-image git blob ID
+    dfpost:   match post-image git blob ID
+    dfblob:   match either pre or post-image git blob ID
+    patchid:  match `git patch-id --stable&#39; output
+    rt:       match received time, like `d:&#39; if sender&#39;s clock was correct
+
+  Most prefixes are probabilistic, meaning they support stemming
+  and wildcards (&#39;*&#39;).  Ranges (such as &#39;d:&#39;) and boolean prefixes
+  do not support stemming or wildcards.
+  The upstream Xapian query parser documentation fully explains
+  the query syntax:
+
+    <a
+href="https://xapian.org/docs/queryparser.html">https://xapian.org/docs/queryparser.html</a>
+
+message threading
+-----------------
+
+  Message threading is enabled for this public-inbox,
+  additional endpoints for message threads are available:
+
+  * <a
+href="https://gnusha.org/pi/bitcoindev/">https://gnusha.org/pi/bitcoindev/</a>&lt;Message-ID&gt;/T/#u
+
+    Loads the thread belonging to the given &lt;Message-ID&gt;
+    in flat chronological order.  The &#34;#u&#34; anchor
+    focuses the browser on the given &lt;Message-ID&gt;.
+
+  * <a
+href="https://gnusha.org/pi/bitcoindev/">https://gnusha.org/pi/bitcoindev/</a>&lt;Message-ID&gt;/t/#u
+
+    Loads the thread belonging to the given &lt;Message-ID&gt;
+    in threaded order with nesting.  For deep threads,
+    this requires a wide display or horizontal scrolling.
+
+  Both of these HTML endpoints are suitable for offline reading
+  using the thread overview at the bottom of each page.
+
+  The gzipped mbox for a thread is available for downloading and
+  importing into your favorite mail client:
+
+  * <a
+href="https://gnusha.org/pi/bitcoindev/">https://gnusha.org/pi/bitcoindev/</a>&lt;Message-ID&gt;/t.mbox.gz
+
+    We use the mboxrd variant of the mbox format described at:
+
+    <a
+href="https://en.wikipedia.org/wiki/Mbox">https://en.wikipedia.org/wiki/Mbox</a>
+
+  Users of feed readers may follow a particular thread using:
+
+  * <a
+href="https://gnusha.org/pi/bitcoindev/">https://gnusha.org/pi/bitcoindev/</a>&lt;Message-ID&gt;/t.atom
+
+    Which loads the thread in Atom Syndication Standard
+    described at Wikipedia and RFC4287:
+
+    <a
+href="https://en.wikipedia.org/wiki/Atom_(standard)">https://en.wikipedia.org/wiki/Atom_(standard)</a>
+    <a
+href="https://tools.ietf.org/html/rfc4287">https://tools.ietf.org/html/rfc4287</a>
+
+    Atom Threading Extensions (RFC4685) are supported:
+
+    <a
+href="https://tools.ietf.org/html/rfc4685">https://tools.ietf.org/html/rfc4685</a>
+
+contact
+-------
+
+  This help text is maintained by public-inbox developers
+  reachable via plain-text email at: meta@public-inbox.org
+  Their inbox is archived at: <a
+href="https://public-inbox.org/meta/">https://public-inbox.org/meta/</a>
+</pre><hr><pre>This is a public inbox, see <a
+href="../../../_/text/mirror/">mirroring instructions</a>
+for how to clone and mirror all data and code used for this inbox</pre></body></html>

@@ -1,0 +1,45 @@
+{
+  "abstract": "Clementine: trust-minimized Bitcoin Bridge | Citrea Source: https://docs.citrea.xyz/essentials/clementine-trust-minimized-bitcoin-bridge Retrieved: 2026-08-24T21:53:35Z --- Citrea \u2318 Ctrl k Website Blog Join The Community More Citrea \ud83d\udc4b Welcome Getting started Chain Information - Quickstart Bridge to Citrea \ud83d\udd0e Essentials TL;DR Architecture and Transaction Lifecycle Clementine: trust-minimized Bitcoin Bridge Using Clementine Execution Environment Security Properties Transaction Finality \ud83e\ude99 CTR Token Overview Staking & Governance Supply & Allocations \ud83d\udcd6 Developer Documentation Kickstart Chain Informa",
+  "authors": [
+    "Citrea documentation"
+  ],
+  "bitcoin_topics": [
+    "Bitcoin-rollups",
+    "zero-knowledge-proofs",
+    "bridges"
+  ],
+  "canonical_url": "https://docs.citrea.xyz/essentials/clementine-trust-minimized-bitcoin-bridge",
+  "collection": "citrea-docs",
+  "content_file": "citrea-docs-clementine-trust-minimized-bitcoin-bridge-citrea-ca3e109da4.md",
+  "id": "citrea-docs-clementine-trust-minimized-bitcoin-bridge-citrea-ca3e109da4",
+  "license": "Public documentation remains copyrighted by Citrea or named authors unless a page states a license. No redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public documentation remains copyrighted by Citrea or named authors unless a page states a license. No redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "text/html",
+    "fetched_url": "https://docs.citrea.xyz/essentials/clementine-trust-minimized-bitcoin-bridge",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/citrea-docs/citrea-docs-clementine-trust-minimized-bitcoin-bridge-citrea-ca3e109da4.html",
+    "retrieved_at": "2026-08-24T21:53:35Z",
+    "sha256": "cb85d1fda1820d9f990975ee5e946cdeb25aa4401543c3526828a415b31b4761"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/citrea-docs.json",
+  "source_type": "article",
+  "tags": [
+    "citrea",
+    "documentation",
+    "bitcoin-rollups",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Clementine: trust-minimized Bitcoin Bridge | Citrea"
+}

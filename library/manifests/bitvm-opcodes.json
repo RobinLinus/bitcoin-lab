@@ -1,0 +1,104 @@
+{
+  "collection": "bitvm-opcodes",
+  "description": "Pinned public opcode scripts and relevant documentation from the user-supplied BitVM/bitvm-js repository.",
+  "entries": [
+    {
+      "canonical_url": "https://github.com/BitVM/bitvm-js/blob/b931a6711ab332fd5923e708c869bed02e39984e/README.md",
+      "commit": "b931a6711ab332fd5923e708c869bed02e39984e",
+      "enabled": true,
+      "id": "bitvm-opcodes-readme-md-fb2d0fbc73",
+      "local_metadata_file": "documents/bitvm-opcodes/bitvm-opcodes-readme-md-fb2d0fbc73.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "README.md",
+      "raw_file": "raw/bitvm-opcodes/bitvm-opcodes-readme-md-fb2d0fbc73.md",
+      "repository": "https://github.com/BitVM/bitvm-js.git",
+      "retrieved_at": "2026-08-24T21:53:24Z",
+      "sha256": "dc76747ec600cd610bbad55eca7fb7109c5404e44c85836d2ec4f49030b085f8"
+    },
+    {
+      "canonical_url": "https://github.com/BitVM/bitvm-js/blob/b931a6711ab332fd5923e708c869bed02e39984e/scripts/opcodes/PRINCEv2/prince_v2.js",
+      "commit": "b931a6711ab332fd5923e708c869bed02e39984e",
+      "enabled": true,
+      "id": "bitvm-opcodes-scripts-opcodes-princev2-prince-v2-js-5e8dea6b96",
+      "local_metadata_file": "documents/bitvm-opcodes/bitvm-opcodes-scripts-opcodes-princev2-prince-v2-js-5e8dea6b96.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "scripts/opcodes/PRINCEv2/prince_v2.js",
+      "raw_file": "raw/bitvm-opcodes/bitvm-opcodes-scripts-opcodes-princev2-prince-v2-js-5e8dea6b96.js",
+      "repository": "https://github.com/BitVM/bitvm-js.git",
+      "retrieved_at": "2026-08-24T21:53:24Z",
+      "sha256": "02ad085d97851bfc143f4549728a73fa9fffc7c918c1676119a2c640fc41b6dc"
+    },
+    {
+      "canonical_url": "https://github.com/BitVM/bitvm-js/blob/b931a6711ab332fd5923e708c869bed02e39984e/scripts/opcodes/PRINCEv2/prince_v2_optimized.js",
+      "commit": "b931a6711ab332fd5923e708c869bed02e39984e",
+      "enabled": true,
+      "id": "bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized-js-9b9ea31a2f",
+      "local_metadata_file": "documents/bitvm-opcodes/bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized-js-9b9ea31a2f.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "scripts/opcodes/PRINCEv2/prince_v2_optimized.js",
+      "raw_file": "raw/bitvm-opcodes/bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized-js-9b9ea31a2f.js",
+      "repository": "https://github.com/BitVM/bitvm-js.git",
+      "retrieved_at": "2026-08-24T21:53:24Z",
+      "sha256": "4112314da06ad0ea3819646a20dfd97818b393f25db0b136268dd73ba757f4c1"
+    },
+    {
+      "canonical_url": "https://github.com/BitVM/bitvm-js/blob/b931a6711ab332fd5923e708c869bed02e39984e/scripts/opcodes/PRINCEv2/prince_v2_optimized10.js",
+      "commit": "b931a6711ab332fd5923e708c869bed02e39984e",
+      "enabled": true,
+      "id": "bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized10-js-ab7efaa8b9",
+      "local_metadata_file": "documents/bitvm-opcodes/bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized10-js-ab7efaa8b9.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "scripts/opcodes/PRINCEv2/prince_v2_optimized10.js",
+      "raw_file": "raw/bitvm-opcodes/bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized10-js-ab7efaa8b9.js",
+      "repository": "https://github.com/BitVM/bitvm-js.git",
+      "retrieved_at": "2026-08-24T21:53:24Z",
+      "sha256": "e43e508dd6baf5cd6bcb3b91cddadbe9a4b9c4f21bd1aff1a4da80ab269f7460"
+    },
+    {
+      "canonical_url": "https://github.com/BitVM/bitvm-js/blob/b931a6711ab332fd5923e708c869bed02e39984e/scripts/opcodes/PRINCEv2/prince_v2_optimized2.js",
+      "commit": "b931a6711ab332fd5923e708c869bed02e39984e",
+      "enabled": true,
+      "id": "bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized2-js-4332bbbeff",
+      "local_metadata_file": "documents/bitvm-opcodes/bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized2-js-4332bbbeff.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "scripts/opcodes/PRINCEv2/prince_v2_optimized2.js",
+      "raw_file": "raw/bitvm-opcodes/bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized2-js-4332bbbeff.js",
+      "repository": "https://github.com/BitVM/bitvm-js.git",
+      "retrieved_at": "2026-08-24T21:53:24Z",
+      "sha256": "63805302da6003551a758a7ac351477470b04a59e007f60618167ba091141276"
+    },
+    {
+      "canonical_url": "https://github.com/BitVM/bitvm-js/blob/b931a6711ab332fd5923e708c869bed02e39984e/scripts/opcodes/PRINCEv2/prince_v2_optimized3.js",
+      "commit": "b931a6711ab332fd5923e708c869bed02e39984e",
+      "enabled": true,
+      "id": "bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized3-js-316c6d64f3",
+      "local_metadata_file": "documents/bitvm-opcodes/bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized3-js-316c6d64f3.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "scripts/opcodes/PRINCEv2/prince_v2_optimized3.js",
+      "raw_file": "raw/bitvm-opcodes/bitvm-opcodes-scripts-opcodes-princev2-prince-v2-optimized3-js-316c6d64f3.js",
+      "repository": "https://github.com/BitVM/bitvm-js.git",
+      "retrieved_at": "2026-08-24T21:53:24Z",
+      "sha256": "14a1f921bef57175721031f9f928c08940561e4cfa8a7f4b38e98d5859d89901"
+    }
+  ],
+  "homepage": "https://github.com/BitVM/bitvm-js/tree/main/scripts/opcodes",
+  "id": "bitvm-opcodes",
+  "ingestion": {
+    "discovery_urls": [
+      "https://github.com/BitVM/bitvm-js/tree/main/scripts/opcodes"
+    ],
+    "expected_formats": [
+      "text/plain",
+      "text/markdown",
+      "source-code"
+    ],
+    "mode": "registry-fetcher",
+    "notes": "Incremental snapshot managed by scripts/ingest_sources.py; see library/ingestion/latest-report.json.",
+    "status": "ingested"
+  },
+  "rights": {
+    "policy": "No repository LICENSE or COPYING file was detected at the pinned commit; no reuse or redistribution license is asserted."
+  },
+  "schema_version": "1.0.0",
+  "source_name": "BitVM/bitvm-js opcode scripts"
+}

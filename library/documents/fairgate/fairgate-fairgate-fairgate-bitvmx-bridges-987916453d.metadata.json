@@ -1,0 +1,44 @@
+{
+  "abstract": "Fairgate | Fairgate - BitVMX Bridges Source: https://www.fairgate.io/resources/bitvmx-bridges Retrieved: 2026-08-24T21:53:00Z --- Products Bit2 Portfolio Services Case Studies Partners Technology BitVMX Platform Build Knowledge Blog Publications Resource Hub Newsletters Company About Press Room Careers Bit2 Services Case Studies Partners BitVMX Platform Build Blog Publications Resource Hub Newsletters About Press Careers Resources \u00bb Bridges \u25b6 \u2591 Case Study UNION BRIDGE \u2014 Rootstock \u2591 Papers TOOP: Transfer of Ownership Protocol \u2591 Articles Union Bridge: A Trust-Minimized Bitcoin Bridge Introducing",
+  "authors": [
+    "Fairgate"
+  ],
+  "bitcoin_topics": [
+    "BitVMX",
+    "BitVM",
+    "bridges"
+  ],
+  "canonical_url": "https://www.fairgate.io/resources/bitvmx-bridges",
+  "collection": "fairgate",
+  "content_file": "fairgate-fairgate-fairgate-bitvmx-bridges-987916453d.md",
+  "id": "fairgate-fairgate-fairgate-bitvmx-bridges-987916453d",
+  "license": "Public resources remain copyrighted by Fairgate or named authors unless an item states a license. No redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public resources remain copyrighted by Fairgate or named authors unless an item states a license. No redistribution license is asserted."
+  },
+  "published_at": "2025-03-04",
+  "retrieval": {
+    "content_type": "text/html",
+    "fetched_url": "https://fairgate.io/resources/bitvmx-bridges",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/fairgate/fairgate-fairgate-fairgate-bitvmx-bridges-987916453d.html",
+    "retrieved_at": "2026-08-24T21:53:00Z",
+    "sha256": "2e298f9d6744a6c41345269724d4b863592f7d025669b4c36dcf7db86c78d357"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/fairgate.json",
+  "source_type": "article",
+  "tags": [
+    "fairgate",
+    "bitcoin-research",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Fairgate | Fairgate - BitVMX Bridges"
+}

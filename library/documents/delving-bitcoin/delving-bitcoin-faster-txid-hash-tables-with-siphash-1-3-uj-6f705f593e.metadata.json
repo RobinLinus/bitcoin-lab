@@ -1,0 +1,44 @@
+{
+  "abstract": "Faster txid hash tables with SipHash-1-3-UJ",
+  "authors": [
+    "Pieter Wuille"
+  ],
+  "bitcoin_topics": [
+    "protocol-development",
+    "consensus",
+    "wallets"
+  ],
+  "canonical_url": "https://delvingbitcoin.org/t/faster-txid-hash-tables-with-siphash-1-3-uj/2834",
+  "collection": "delving-bitcoin",
+  "content_file": "delving-bitcoin-faster-txid-hash-tables-with-siphash-1-3-uj-6f705f593e.md",
+  "id": "delving-bitcoin-faster-txid-hash-tables-with-siphash-1-3-uj-6f705f593e",
+  "license": "Public forum posts remain author-owned unless a post states otherwise. Store a local research snapshot with attribution; no redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public forum posts remain author-owned unless a post states otherwise. Store a local research snapshot with attribution; no redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "application/json",
+    "fetched_url": "https://delvingbitcoin.org/t/faster-txid-hash-tables-with-siphash-1-3-uj/2834.json",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/delving-bitcoin/delving-bitcoin-faster-txid-hash-tables-with-siphash-1-3-uj-6f705f593e.json",
+    "retrieved_at": "2026-08-24T21:52:39Z",
+    "sha256": "d0e29fb3b39ba9d7eec2a023210ea4c65a40a85be515d0bfdb225eee96fa01f2"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/delving-bitcoin.json",
+  "source_type": "article",
+  "tags": [
+    "delving-bitcoin",
+    "technical-discussion",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Faster txid hash tables with SipHash-1-3-UJ"
+}

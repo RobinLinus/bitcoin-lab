@@ -1,0 +1,55 @@
+{
+  "collection": "robinlinus",
+  "description": "Bounded public research snapshot discovered from Robin Linus's official site.",
+  "entries": [
+    {
+      "canonical_url": "https://robinlinus.com/binohash.pdf",
+      "enabled": true,
+      "id": "robinlinus-binohash-b13436c439",
+      "local_metadata_file": "documents/robinlinus/robinlinus-binohash-b13436c439.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/robinlinus/robinlinus-binohash-b13436c439.pdf",
+      "retrieved_at": "2026-08-24T21:52:50Z",
+      "sha256": "1be2b63034a86db1f9f4a35c7963248d307583723079ff25284a9fc4affee94a"
+    },
+    {
+      "canonical_url": "https://robinlinus.com/bitstream.pdf",
+      "enabled": true,
+      "id": "robinlinus-bitstream-11e9972f7c",
+      "local_metadata_file": "documents/robinlinus/robinlinus-bitstream-11e9972f7c.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/robinlinus/robinlinus-bitstream-11e9972f7c.pdf",
+      "retrieved_at": "2026-08-24T21:52:50Z",
+      "sha256": "10d4c7f15c28789d29b3b737c8f61bf9e15459e404ef75029871bfce51b49f9f"
+    },
+    {
+      "canonical_url": "https://robinlinus.com/vrf.pdf",
+      "enabled": true,
+      "id": "robinlinus-vrf-a1129d36b4",
+      "local_metadata_file": "documents/robinlinus/robinlinus-vrf-a1129d36b4.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/robinlinus/robinlinus-vrf-a1129d36b4.pdf",
+      "retrieved_at": "2026-08-24T21:52:50Z",
+      "sha256": "2e86626fef988687ab9c132639241d5e2693ae79b34c8a6ef29c4783cb47beeb"
+    }
+  ],
+  "homepage": "https://robinlinus.com/",
+  "id": "robinlinus",
+  "ingestion": {
+    "discovery_urls": [
+      "https://robinlinus.com/"
+    ],
+    "expected_formats": [
+      "application/pdf",
+      "text/html"
+    ],
+    "mode": "registry-fetcher",
+    "notes": "Incremental snapshot managed by scripts/ingest_sources.py; see library/ingestion/latest-report.json.",
+    "status": "ingested"
+  },
+  "rights": {
+    "policy": "Source copyright is retained; no redistribution license is asserted."
+  },
+  "schema_version": "1.0.0",
+  "source_name": "Robin Linus research"
+}

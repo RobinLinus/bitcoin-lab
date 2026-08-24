@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "id": "delving-package-relay-fixture",
+  "title": "Package relay and fee bumping — synthetic Delving Bitcoin fixture",
+  "authors": ["Bitcoin Research Lab"],
+  "published_at": "2026-08-24",
+  "source_type": "article",
+  "collection": "delving-bitcoin",
+  "canonical_url": "https://delvingbitcoin.org/",
+  "content_file": "package-relay-fixture.md",
+  "license": "CC0-1.0",
+  "retrieved_at": "2026-08-24",
+  "abstract": "A synthetic retrieval fixture about package relay, CPFP fee bumping, topology policy, and pinning resistance.",
+  "tags": ["synthetic-fixture", "package-relay", "fee-bumping"],
+  "bitcoin_topics": ["mempool-policy", "cpfp", "transaction-relay", "pinning"],
+  "source_manifest": "manifests/delving-bitcoin.json",
+  "provenance": {
+    "content_kind": "synthetic-fixture",
+    "is_sample": true,
+    "notes": "Original test text; no Delving Bitcoin post was copied or paraphrased as a specific source.",
+    "source_license": "Not applicable to synthetic fixture."
+  }
+}
+

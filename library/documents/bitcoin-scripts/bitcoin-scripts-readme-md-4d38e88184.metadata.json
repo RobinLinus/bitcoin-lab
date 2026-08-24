@@ -1,0 +1,46 @@
+{
+  "abstract": "README.md at pinned commit 8f442e4bf8a744dd9bf69b2937bdebcaed5cae77.",
+  "authors": [
+    "coins/bitcoin-scripts"
+  ],
+  "bitcoin_topics": [
+    "Bitcoin-Script",
+    "transactions",
+    "opcodes"
+  ],
+  "canonical_url": "https://github.com/coins/bitcoin-scripts/blob/8f442e4bf8a744dd9bf69b2937bdebcaed5cae77/README.md",
+  "collection": "bitcoin-scripts",
+  "content_file": "bitcoin-scripts-readme-md-4d38e88184.md",
+  "id": "bitcoin-scripts-readme-md-4d38e88184",
+  "license": "No repository LICENSE or COPYING file was detected at the pinned commit. No reuse or redistribution license is asserted; individual file notices, if any, continue to apply.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "No repository LICENSE or COPYING file was detected at the pinned commit. No reuse or redistribution license is asserted; individual file notices, if any, continue to apply."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "commit": "8f442e4bf8a744dd9bf69b2937bdebcaed5cae77",
+    "content_type": "text/plain",
+    "fetcher_version": "1.0.0",
+    "method": "public-git",
+    "path": "README.md",
+    "raw_file": "raw/bitcoin-scripts/bitcoin-scripts-readme-md-4d38e88184.md",
+    "repository": "https://github.com/coins/bitcoin-scripts.git",
+    "retrieved_at": "2026-08-24T21:53:22Z",
+    "sha256": "0a22218350b4545e553ab099e185977f3b6c3d66f08c5f4aaef65b4c046a440a"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/bitcoin-scripts.json",
+  "source_type": "source-code",
+  "tags": [
+    "bitcoin-scripts",
+    "script-examples",
+    "source-code",
+    "public-source",
+    "ingested"
+  ],
+  "title": "README.md"
+}

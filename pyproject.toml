@@ -1,0 +1,8 @@
+[project]
+name = "bitcoin-research-lab"
+version = "0.1.0"
+description = "A local Bitcoin research library, search API, Script laboratory, and Bitcoin Core regtest node"
+requires-python = ">=3.9"
+
+[tool.unittest]
+start-directory = "tests"

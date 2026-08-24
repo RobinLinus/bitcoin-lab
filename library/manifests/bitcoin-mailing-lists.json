@@ -1,0 +1,91 @@
+{
+  "collection": "mailing-lists",
+  "description": "Manifest for selected public Bitcoin protocol-development mailing-list discussions and a bounded archive snapshot.",
+  "entries": [
+    {
+      "canonical_url": "https://gnusha.org/pi/bitcoindev/wWGWjMw9TI22vp4VzCm4xJJS3IGA1UhndMKynUkB04BqeoRjhe-QbDbJU-GMQq0nnOnXuB__u8KcdIcxU5i8Cy9pbTbtJ7Hi583FzLVojek=@pm.me/T/",
+      "enabled": true,
+      "id": "bitcoin-mailing-lists-bitcoindev-bip-proposal-anti-fee-sniping-with-locktime-52b774bd92",
+      "local_metadata_file": "documents/mailing-lists/bitcoin-mailing-lists-bitcoindev-bip-proposal-anti-fee-sniping-with-locktime-52b774bd92.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/bitcoin-mailing-lists/bitcoin-mailing-lists-bitcoindev-bip-proposal-anti-fee-sniping-with-locktime-52b774bd92.html",
+      "retrieved_at": "2026-08-24T21:52:29Z",
+      "sha256": "e3b95aa2467a4eb142c0808f2363bb94bf1c9df2c10b03d04aaafcc73fb79af5"
+    },
+    {
+      "canonical_url": "https://gnusha.org/pi/bitcoindev/O_i0gml6GTRro49f8c8jlCmgwOH5ZMDsJg4zxe-pX6akiGaibaFP7ilCTX90ZDfKORvmd3YlU4UUZWkwI-NPlvEtY8eVAvCFqO_ckuMG7m8=@proton.me/T/",
+      "enabled": true,
+      "id": "bitcoin-mailing-lists-bitcoindev-dropkick-a-minimal-commit-reveal-pq-rescue-protocol-62a00e9b86",
+      "local_metadata_file": "documents/mailing-lists/bitcoin-mailing-lists-bitcoindev-dropkick-a-minimal-commit-reveal-pq-rescue-protocol-62a00e9b86.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/bitcoin-mailing-lists/bitcoin-mailing-lists-bitcoindev-dropkick-a-minimal-commit-reveal-pq-rescue-protocol-62a00e9b86.html",
+      "retrieved_at": "2026-08-24T21:52:29Z",
+      "sha256": "eaa1107b32014c1bb1d4a73a27602d535cc36a4ee9a34c4d78ff251044e8775d"
+    },
+    {
+      "canonical_url": "https://gnusha.org/pi/bitcoindev/_/text/color/",
+      "enabled": true,
+      "id": "bitcoin-mailing-lists-color-customization-for-https-gnusha-org-pi-bitcoindev-50f8bb1fc3",
+      "local_metadata_file": "documents/mailing-lists/bitcoin-mailing-lists-color-customization-for-https-gnusha-org-pi-bitcoindev-50f8bb1fc3.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/bitcoin-mailing-lists/bitcoin-mailing-lists-color-customization-for-https-gnusha-org-pi-bitcoindev-50f8bb1fc3.html",
+      "retrieved_at": "2026-08-24T21:52:29Z",
+      "sha256": "e8d3a37ecec9b57fff9fce6250f42f5b47cf4f2be42dafc0a2763b033ba938aa"
+    },
+    {
+      "canonical_url": "https://gnusha.org/pi/bitcoindev/new.atom",
+      "enabled": true,
+      "id": "bitcoin-mailing-lists-new-atom-a84ed4ba4e",
+      "local_metadata_file": "documents/mailing-lists/bitcoin-mailing-lists-new-atom-a84ed4ba4e.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/bitcoin-mailing-lists/bitcoin-mailing-lists-new-atom-a84ed4ba4e.atom",
+      "retrieved_at": "2026-08-24T21:52:29Z",
+      "sha256": "3e4da19510a5fc613fa5ec8d03790e56c942583733f87444e7cd09e5bd0a01a8"
+    },
+    {
+      "canonical_url": "https://gnusha.org/pi/bitcoindev/_/text/help/",
+      "enabled": true,
+      "id": "bitcoin-mailing-lists-public-inbox-help-for-https-gnusha-org-pi-bitcoindev-479b702cb1",
+      "local_metadata_file": "documents/mailing-lists/bitcoin-mailing-lists-public-inbox-help-for-https-gnusha-org-pi-bitcoindev-479b702cb1.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/bitcoin-mailing-lists/bitcoin-mailing-lists-public-inbox-help-for-https-gnusha-org-pi-bitcoindev-479b702cb1.html",
+      "retrieved_at": "2026-08-24T21:52:29Z",
+      "sha256": "a8a007a9c627f2cce17b505b8a71d97e0ab2ad511b26f77b943589132d67a07d"
+    },
+    {
+      "canonical_url": "https://gnusha.org/pi/bitcoindev/_/text/mirror/",
+      "enabled": true,
+      "id": "bitcoin-mailing-lists-public-inbox-mirroring-instructions-0dcb65e5ea",
+      "local_metadata_file": "documents/mailing-lists/bitcoin-mailing-lists-public-inbox-mirroring-instructions-0dcb65e5ea.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/bitcoin-mailing-lists/bitcoin-mailing-lists-public-inbox-mirroring-instructions-0dcb65e5ea.html",
+      "retrieved_at": "2026-08-24T21:52:29Z",
+      "sha256": "f0813b3d19e24864f1c72eb78e57778d41d56e3cd2c63b6b9f6983f6063bd756"
+    },
+    {
+      "canonical_url": "https://groups.google.com/g/bitcoindev",
+      "enabled": true,
+      "id": "mailing-list-pinning-fixture",
+      "local_metadata_file": "documents/mailing-lists/transaction-pinning-fixture.metadata.json"
+    }
+  ],
+  "homepage": "https://groups.google.com/g/bitcoindev",
+  "id": "bitcoin-development-mailing-lists",
+  "ingestion": {
+    "discovery_urls": [
+      "https://groups.google.com/g/bitcoindev"
+    ],
+    "expected_formats": [
+      "message/rfc822",
+      "text/html"
+    ],
+    "mode": "registry-fetcher",
+    "notes": "Incremental snapshot managed by scripts/ingest_sources.py; see library/ingestion/latest-report.json.",
+    "status": "ingested"
+  },
+  "rights": {
+    "policy": "Treat messages as author-owned public correspondence. Store metadata and links until reuse terms have been reviewed."
+  },
+  "schema_version": "1.0.0",
+  "source_name": "Bitcoin development mailing-list discussions"
+}

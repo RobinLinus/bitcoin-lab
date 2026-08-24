@@ -1,0 +1,45 @@
+{
+  "abstract": "bitcoindev BIP Proposal Anti-Fee-Sniping with LockTime Source: https://gnusha.org/pi/bitcoindev/wWGWjMw9TI22vp4VzCm4xJJS3IGA1UhndMKynUkB04BqeoRjhe-QbDbJU-GMQq0nnOnXuB u8KcdIcxU5i8Cy9pbTbtJ7Hi583FzLVojek=@pm.me/T/ Retrieved: 2026-08-24T21:52:29Z --- public inbox for bitcoindev@googlegroups.com help / color / mirror / Atom feed bitcoindev BIP Proposal Anti-Fee-Sniping with LockTime @ 2026-08-18 8:00 'nervana21' via Bitcoin Development Mailing List 2026-08-19 13:31 bitcoindev \" b10c 0 siblings, 1 reply; 3+ messages in thread From: 'nervana21' via Bitcoin Development Mailing List @ 2026-08-18 8:00",
+  "authors": [
+    "Bitcoin development mailing lists"
+  ],
+  "bitcoin_topics": [
+    "protocol-development",
+    "consensus",
+    "relay-policy"
+  ],
+  "canonical_url": "https://gnusha.org/pi/bitcoindev/wWGWjMw9TI22vp4VzCm4xJJS3IGA1UhndMKynUkB04BqeoRjhe-QbDbJU-GMQq0nnOnXuB__u8KcdIcxU5i8Cy9pbTbtJ7Hi583FzLVojek=@pm.me/T/",
+  "collection": "mailing-lists",
+  "content_file": "bitcoin-mailing-lists-bitcoindev-bip-proposal-anti-fee-sniping-with-locktime-52b774bd92.md",
+  "id": "bitcoin-mailing-lists-bitcoindev-bip-proposal-anti-fee-sniping-with-locktime-52b774bd92",
+  "license": "Public author-owned correspondence; retain source attribution and canonical archive URL. No redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public author-owned correspondence; retain source attribution and canonical archive URL. No redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "text/html",
+    "fetched_url": "https://gnusha.org/pi/bitcoindev/wWGWjMw9TI22vp4VzCm4xJJS3IGA1UhndMKynUkB04BqeoRjhe-QbDbJU-GMQq0nnOnXuB__u8KcdIcxU5i8Cy9pbTbtJ7Hi583FzLVojek=@pm.me/T/",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/bitcoin-mailing-lists/bitcoin-mailing-lists-bitcoindev-bip-proposal-anti-fee-sniping-with-locktime-52b774bd92.html",
+    "retrieved_at": "2026-08-24T21:52:29Z",
+    "sha256": "e3b95aa2467a4eb142c0808f2363bb94bf1c9df2c10b03d04aaafcc73fb79af5"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/bitcoin-mailing-lists.json",
+  "source_type": "mailing-list-thread",
+  "tags": [
+    "bitcoin-dev",
+    "mailing-list",
+    "protocol-development",
+    "public-source",
+    "ingested"
+  ],
+  "title": "[bitcoindev] [BIP Proposal] Anti-Fee-Sniping with LockTime"
+}

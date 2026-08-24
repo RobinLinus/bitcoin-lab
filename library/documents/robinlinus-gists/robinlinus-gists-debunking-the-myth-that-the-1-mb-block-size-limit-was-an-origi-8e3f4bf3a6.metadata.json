@@ -1,0 +1,47 @@
+{
+  "abstract": "Debunking the myth that the 1 MB block-size limit was an original, permanent, sacred design constraint.",
+  "authors": [
+    "RobinLinus"
+  ],
+  "bitcoin_topics": [
+    "Bitcoin",
+    "cryptography",
+    "prototypes"
+  ],
+  "canonical_url": "https://gist.github.com/RobinLinus/d46cb202d5c25a37356332c476cac174#file-big-blocks-md",
+  "collection": "robinlinus-gists",
+  "content_file": "robinlinus-gists-debunking-the-myth-that-the-1-mb-block-size-limit-was-an-origi-8e3f4bf3a6.md",
+  "id": "robinlinus-gists-debunking-the-myth-that-the-1-mb-block-size-limit-was-an-origi-8e3f4bf3a6",
+  "license": "Public gists have no implied open-source license. Preserve author, canonical gist URL, revision, and filename; no redistribution license is asserted unless a gist states one.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public gists have no implied open-source license. Preserve author, canonical gist URL, revision, and filename; no redistribution license is asserted unless a gist states one."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "text/markdown",
+    "fetched_url": "https://api.github.com/gists/d46cb202d5c25a37356332c476cac174",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-api",
+    "path": "big-blocks.md",
+    "raw_file": "raw/robinlinus-gists/robinlinus-gists-debunking-the-myth-that-the-1-mb-block-size-limit-was-an-origi-8e3f4bf3a6.md",
+    "retrieved_at": "2026-08-24T21:53:25Z",
+    "revision": "85f2455e4ca3558184e7b1fc42fa20e2d718d2a6",
+    "sha256": "b3b9d911b2857a24080b8057206d183a9d1a8c41ba23a91cd1fafadc0015b6d0"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/robinlinus-gists.json",
+  "source_type": "source-code",
+  "tags": [
+    "robin-linus",
+    "github-gist",
+    "source-code",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Debunking the myth that the 1 MB block-size limit was an original, permanent, sacred design constraint. / big-blocks.md"
+}

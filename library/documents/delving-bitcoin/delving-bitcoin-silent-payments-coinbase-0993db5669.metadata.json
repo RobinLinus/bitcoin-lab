@@ -1,0 +1,44 @@
+{
+  "abstract": "Silent Payments coinbase",
+  "authors": [
+    "average_gary"
+  ],
+  "bitcoin_topics": [
+    "protocol-development",
+    "consensus",
+    "wallets"
+  ],
+  "canonical_url": "https://delvingbitcoin.org/t/silent-payments-coinbase/2833",
+  "collection": "delving-bitcoin",
+  "content_file": "delving-bitcoin-silent-payments-coinbase-0993db5669.md",
+  "id": "delving-bitcoin-silent-payments-coinbase-0993db5669",
+  "license": "Public forum posts remain author-owned unless a post states otherwise. Store a local research snapshot with attribution; no redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public forum posts remain author-owned unless a post states otherwise. Store a local research snapshot with attribution; no redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "application/json",
+    "fetched_url": "https://delvingbitcoin.org/t/silent-payments-coinbase/2833.json",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/delving-bitcoin/delving-bitcoin-silent-payments-coinbase-0993db5669.json",
+    "retrieved_at": "2026-08-24T21:52:39Z",
+    "sha256": "02dc77b7ab92fb9e852509ad8005c3463df9622be63c58585790619a8c844583"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/delving-bitcoin.json",
+  "source_type": "article",
+  "tags": [
+    "delving-bitcoin",
+    "technical-discussion",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Silent Payments coinbase"
+}

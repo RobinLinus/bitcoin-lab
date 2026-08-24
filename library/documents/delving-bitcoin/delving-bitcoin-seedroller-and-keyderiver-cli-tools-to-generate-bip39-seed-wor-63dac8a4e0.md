@@ -1,0 +1,57 @@
+# Seedroller and keyderiver: cli tools to generate BIP39 seed words and derive BIP380 keys
+
+Source: https://delvingbitcoin.org/t/seedroller-and-keyderiver-cli-tools-to-generate-bip39-seed-words-and-derive-bip380-keys/2822
+
+Retrieved: 2026-08-24T21:52:39Z
+
+---
+
+## bubb1es
+
+In light of recent events I became interested in how to safely generate a strong random seed. The closest tool I found in rust is
+
+seedtool-cli-rust
+
+but it has a lot of dependencies I don’t recognize and I prefer building on the rust-bitcoin orgs crates.
+
+I humbly submit my own cli tool
+
+seedroller
+
+for generating BIP39 seed words from dice rolls hashed with
+
+getrandom()
+
+system entropy. I also created a companion cli tool
+
+keyderiver
+
+that takes your seed words and derives BIP380 descriptor key expressions. Both are based on rust-bitcoin org rust crates and have minimal other dependencies. For all the fun details please checkout the
+
+bitcoin-key-tools
+
+repo.
+
+Feedback is much appreciated, this is still early work and I’m happy to implement suggestions that improve these tools soundness and security.
+
+## Anzus
+
+This looks interesting. For people using dice because they want to avoid relying on a computer for randomness, would it make sense to offer a clearly labelled dice-only option as well?
+
+That could make it easier for users to understand exactly what they are trusting and choose the approach they are comfortable with.
+
+## bubb1es
+
+Thanks for taking a look. There is already at
+
+-r
+
+option that only takes dice roles, so it can give “reproducable” results, ie. same dice rolls after sha256 hash always give same seed words. I compare with the results from
+
+iancolman.io/bip39
+
+in the
+
+known_answer_100_rolls_no_os_entropy
+
+unit test.

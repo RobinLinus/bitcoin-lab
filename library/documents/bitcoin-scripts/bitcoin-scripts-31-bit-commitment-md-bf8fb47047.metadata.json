@@ -1,0 +1,46 @@
+{
+  "abstract": "31-bit_commitment.md at pinned commit 8f442e4bf8a744dd9bf69b2937bdebcaed5cae77.",
+  "authors": [
+    "coins/bitcoin-scripts"
+  ],
+  "bitcoin_topics": [
+    "Bitcoin-Script",
+    "transactions",
+    "opcodes"
+  ],
+  "canonical_url": "https://github.com/coins/bitcoin-scripts/blob/8f442e4bf8a744dd9bf69b2937bdebcaed5cae77/31-bit_commitment.md",
+  "collection": "bitcoin-scripts",
+  "content_file": "bitcoin-scripts-31-bit-commitment-md-bf8fb47047.md",
+  "id": "bitcoin-scripts-31-bit-commitment-md-bf8fb47047",
+  "license": "No repository LICENSE or COPYING file was detected at the pinned commit. No reuse or redistribution license is asserted; individual file notices, if any, continue to apply.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "No repository LICENSE or COPYING file was detected at the pinned commit. No reuse or redistribution license is asserted; individual file notices, if any, continue to apply."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "commit": "8f442e4bf8a744dd9bf69b2937bdebcaed5cae77",
+    "content_type": "text/plain",
+    "fetcher_version": "1.0.0",
+    "method": "public-git",
+    "path": "31-bit_commitment.md",
+    "raw_file": "raw/bitcoin-scripts/bitcoin-scripts-31-bit-commitment-md-bf8fb47047.md",
+    "repository": "https://github.com/coins/bitcoin-scripts.git",
+    "retrieved_at": "2026-08-24T21:53:22Z",
+    "sha256": "5449af56eb8650ee8a306a2816f78d488de73295f5078656f7a07d61dbeb846c"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/bitcoin-scripts.json",
+  "source_type": "source-code",
+  "tags": [
+    "bitcoin-scripts",
+    "script-examples",
+    "source-code",
+    "public-source",
+    "ingested"
+  ],
+  "title": "31-bit_commitment.md"
+}

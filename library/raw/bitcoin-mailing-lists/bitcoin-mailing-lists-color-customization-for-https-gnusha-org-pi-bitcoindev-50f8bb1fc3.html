@@ -1,0 +1,111 @@
+<html><head><title>color customization for https://gnusha.org/pi/bitcoindev/</title><link
+rel=alternate
+title="Atom feed"
+href="../../../new.atom"
+type="application/atom+xml"/><style>pre{white-space:pre-wrap}*{font-size:100%;font-family:monospace}</style></head><body><form
+action="../../../"><pre><a
+href="../../../"><b>public inbox for bitcoindev@googlegroups.com</b></a>
+<input
+name=q
+type=text /><input
+type=submit
+value=search /> <a
+href="../../../_/text/help/">help</a> / <a
+href="../../../_/text/color/">color</a> / <a
+id=mirror
+href="../../../_/text/mirror/">mirror</a> / <a
+href="../../../new.atom">Atom feed</a></pre></form><pre>color customization for <a
+href="https://gnusha.org/pi/bitcoindev/">https://gnusha.org/pi/bitcoindev/</a>
+
+public-inbox provides a stable set of CSS classes for users to
+customize colors for highlighting diffs and code.
+
+Users of browsers such as dillo, Firefox, or some browser
+extensions may start by downloading the following sample CSS file
+to control the colors they see:
+
+  <a
+href="https://gnusha.org/pi/bitcoindev/userContent.css">https://gnusha.org/pi/bitcoindev/userContent.css</a>
+
+CSS sample
+----------
+```css
+/*
+ * Firefox users: this goes in $PROFILE_FOLDER/chrome/userContent.css
+ * where $PROFILE_FOLDER is platform-specific
+ *
+ * cf. <a
+href="http://kb.mozillazine.org/UserContent.css">http://kb.mozillazine.org/UserContent.css</a>
+ *     <a
+href="http://kb.mozillazine.org/Profile_folder_-_Firefox">http://kb.mozillazine.org/Profile_folder_-_Firefox</a>
+ *
+ * Users of dillo can remove the entire lines with &#34;moz-only&#34;
+ * in them and place the resulting file in ~/.dillo/style.css
+ */
+@-moz-document url-prefix(<a
+href="https://gnusha.org/pi/bitcoindev/">https://gnusha.org/pi/bitcoindev/</a>) { /* moz-only */
+	/*
+	 * CC0-1.0 &lt;<a
+href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">https://creativecommons.org/publicdomain/zero/1.0/legalcode</a>&gt;
+	 * Dark color scheme using 216 web-safe colors, inspired
+	 * somewhat by the default color scheme in mutt.
+	 * It reduces eyestrain for me, and energy usage for all:
+	 * <a
+href="https://en.wikipedia.org/wiki/Light-on-dark_color_scheme">https://en.wikipedia.org/wiki/Light-on-dark_color_scheme</a>
+	 */
+	* { font-size: 100% !important;
+		font-family: monospace !important;
+		background:#000 !important;
+		color:#ccc !important }
+	pre { white-space: pre-wrap !important }
+
+	/*
+	 * Underlined links add visual noise which make them hard-to-read.
+	 * Use colors to make them stand out, instead.
+	 */
+	a:link { color:#69f !important;
+		text-decoration:none !important }
+	a:visited { color:#96f !important }
+
+	/* quoted text in emails gets a different color */
+	*.q { color:#09f !important }
+
+	/*
+	 * these may be used with cgit &lt;<a
+href="https://git.zx2c4.com/cgit/">https://git.zx2c4.com/cgit/</a>&gt;, too.
+	 * (cgit uses &lt;div&gt;, public-inbox uses &lt;span&gt;)
+	 */
+	*.add { color:#0ff !important } /* diff post-image lines */
+	*.del { color:#f0f !important } /* diff pre-image lines */
+	*.head { color:#fff !important } /* diff header (metainformation) */
+	*.hunk { color:#c93 !important } /* diff hunk-header */
+
+	/*
+	 * highlight 3.x colors (tested 3.18) for displaying blobs.
+	 * This doesn&#39;t use most of the colors available, as I find too
+	 * many colors overwhelming, so the default is commented out.
+	 */
+	.hl.num { color:#f30 !important } /* number */
+	.hl.esc { color:#f0f !important } /* escape character */
+	.hl.str { color:#f30 !important } /* string */
+	.hl.ppc { color:#f0f !important } /* preprocessor */
+	.hl.pps { color:#f30 !important } /* preprocessor string */
+	.hl.slc { color:#09f !important } /* single-line comment */
+	.hl.com { color:#09f !important } /* multi-line comment */
+	/* .hl.opt { color:#ccc !important } */ /* operator */
+	/* .hl.ipl { color:#ccc !important } */ /* interpolation */
+
+	/* keyword groups kw[a-z] */
+	.hl.kwa { color:#ff0 !important }
+	.hl.kwb { color:#0f0 !important }
+	.hl.kwc { color:#ff0 !important }
+	/* .hl.kwd { color:#ccc !important } */
+
+	/* line-number (unused by public-inbox) */
+	/* .hl.lin { color:#ccc !important } */
+
+} /* moz-only */
+```
+</pre><hr><pre>This is a public inbox, see <a
+href="../../../_/text/mirror/">mirroring instructions</a>
+for how to clone and mirror all data and code used for this inbox</pre></body></html>

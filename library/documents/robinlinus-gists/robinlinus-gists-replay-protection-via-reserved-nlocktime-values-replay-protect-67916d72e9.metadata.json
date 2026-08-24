@@ -1,0 +1,47 @@
+{
+  "abstract": "Replay Protection via Reserved nLockTime Values",
+  "authors": [
+    "RobinLinus"
+  ],
+  "bitcoin_topics": [
+    "Bitcoin",
+    "cryptography",
+    "prototypes"
+  ],
+  "canonical_url": "https://gist.github.com/RobinLinus/c9bde57d6e7eda9e447909fae35ec0b1#file-replay-protection-md",
+  "collection": "robinlinus-gists",
+  "content_file": "robinlinus-gists-replay-protection-via-reserved-nlocktime-values-replay-protect-67916d72e9.md",
+  "id": "robinlinus-gists-replay-protection-via-reserved-nlocktime-values-replay-protect-67916d72e9",
+  "license": "Public gists have no implied open-source license. Preserve author, canonical gist URL, revision, and filename; no redistribution license is asserted unless a gist states one.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public gists have no implied open-source license. Preserve author, canonical gist URL, revision, and filename; no redistribution license is asserted unless a gist states one."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "text/markdown",
+    "fetched_url": "https://api.github.com/gists/c9bde57d6e7eda9e447909fae35ec0b1",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-api",
+    "path": "replay-protection.md",
+    "raw_file": "raw/robinlinus-gists/robinlinus-gists-replay-protection-via-reserved-nlocktime-values-replay-protect-67916d72e9.md",
+    "retrieved_at": "2026-08-24T21:53:25Z",
+    "revision": "4c803dd8892811acafd3ccf408dbf8a95aa0b21d",
+    "sha256": "a1236e951de0965c7d82ba2b10dadfbdb63aeb7c493b6fcdfee4287006294e60"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/robinlinus-gists.json",
+  "source_type": "source-code",
+  "tags": [
+    "robin-linus",
+    "github-gist",
+    "source-code",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Replay Protection via Reserved nLockTime Values / replay-protection.md"
+}

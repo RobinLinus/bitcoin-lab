@@ -1,0 +1,44 @@
+{
+  "abstract": "Alpen Testnet III provides a persistent public environment for partner integrations",
+  "authors": [
+    "Alpen Labs research"
+  ],
+  "bitcoin_topics": [
+    "Bitcoin-rollups",
+    "zero-knowledge-proofs",
+    "verification"
+  ],
+  "canonical_url": "https://www.alpen.org/blog/partner-integration-testnet-iii",
+  "collection": "alpen",
+  "content_file": "alpen-alpen-enters-partner-integration-phase-32fb363907.md",
+  "id": "alpen-alpen-enters-partner-integration-phase-32fb363907",
+  "license": "Public articles remain copyrighted by Alpen Labs or named authors unless an item states a license. No redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public articles remain copyrighted by Alpen Labs or named authors unless an item states a license. No redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "text/html",
+    "fetched_url": "https://www.alpen.org/blog/partner-integration-testnet-iii",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/alpen/alpen-alpen-enters-partner-integration-phase-32fb363907.html",
+    "retrieved_at": "2026-08-24T21:53:09Z",
+    "sha256": "09f2ea8cb3db2608abae7f7138416f234863a7aae047a7959b378e881f39a97b"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/alpen.json",
+  "source_type": "article",
+  "tags": [
+    "alpen-labs",
+    "bitcoin-research",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Alpen enters partner integration phase"
+}

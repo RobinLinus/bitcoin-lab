@@ -1,0 +1,98 @@
+{
+  "collection": "robinlinus-gists",
+  "description": "Bounded current-revision snapshot of public gists and their individual files.",
+  "entries": [
+    {
+      "canonical_url": "https://gist.github.com/RobinLinus/7fbfcf4110d010222b1e0b8f972ec351#file-th-chains-md",
+      "enabled": true,
+      "id": "robinlinus-gists-bip300-like-withdrawals-with-bip448-style-covenants-th-chains-b0bcef3a7f",
+      "local_metadata_file": "documents/robinlinus-gists/robinlinus-gists-bip300-like-withdrawals-with-bip448-style-covenants-th-chains-b0bcef3a7f.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "th-chains.md",
+      "raw_file": "raw/robinlinus-gists/robinlinus-gists-bip300-like-withdrawals-with-bip448-style-covenants-th-chains-b0bcef3a7f.md",
+      "retrieved_at": "2026-08-24T21:53:25Z",
+      "revision": "ef653ab737d38254589af3a52bd46c17372db5a1",
+      "sha256": "9083ace99b295e1f2b13b20529c5ae779e8f94d702d6b73efd6ae3b4c010a292"
+    },
+    {
+      "canonical_url": "https://gist.github.com/RobinLinus/d46cb202d5c25a37356332c476cac174#file-big-blocks-md",
+      "enabled": true,
+      "id": "robinlinus-gists-debunking-the-myth-that-the-1-mb-block-size-limit-was-an-origi-8e3f4bf3a6",
+      "local_metadata_file": "documents/robinlinus-gists/robinlinus-gists-debunking-the-myth-that-the-1-mb-block-size-limit-was-an-origi-8e3f4bf3a6.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "big-blocks.md",
+      "raw_file": "raw/robinlinus-gists/robinlinus-gists-debunking-the-myth-that-the-1-mb-block-size-limit-was-an-origi-8e3f4bf3a6.md",
+      "retrieved_at": "2026-08-24T21:53:25Z",
+      "revision": "85f2455e4ca3558184e7b1fc42fa20e2d718d2a6",
+      "sha256": "b3b9d911b2857a24080b8057206d183a9d1a8c41ba23a91cd1fafadc0015b6d0"
+    },
+    {
+      "canonical_url": "https://gist.github.com/RobinLinus/e0876dba90f9755103c05ad2bc9b4ee6#file-onchain-kyc-md",
+      "enabled": true,
+      "id": "robinlinus-gists-perpetual-onchain-kyc-using-bip-448-onchain-kyc-md-993a242d09",
+      "local_metadata_file": "documents/robinlinus-gists/robinlinus-gists-perpetual-onchain-kyc-using-bip-448-onchain-kyc-md-993a242d09.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "onchain-kyc.md",
+      "raw_file": "raw/robinlinus-gists/robinlinus-gists-perpetual-onchain-kyc-using-bip-448-onchain-kyc-md-993a242d09.md",
+      "retrieved_at": "2026-08-24T21:53:25Z",
+      "revision": "671cef18a01b9f804487fd42ccf9aae0e8caa728",
+      "sha256": "557549abe8860d0417214989ce95c795f6e19a4fd8863b79db5404e4c0c46c7e"
+    },
+    {
+      "canonical_url": "https://gist.github.com/RobinLinus/1b0abfa9140e3412f4bc25b669e2eee6#file-real-world-adoption-md",
+      "enabled": true,
+      "id": "robinlinus-gists-promising-examples-of-real-world-bitcoin-payment-adoption-real-35bc11ad26",
+      "local_metadata_file": "documents/robinlinus-gists/robinlinus-gists-promising-examples-of-real-world-bitcoin-payment-adoption-real-35bc11ad26.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "real-world-adoption.md",
+      "raw_file": "raw/robinlinus-gists/robinlinus-gists-promising-examples-of-real-world-bitcoin-payment-adoption-real-35bc11ad26.md",
+      "retrieved_at": "2026-08-24T21:53:25Z",
+      "revision": "8c29ca92e58b2f434030f5deae08e2114de78df6",
+      "sha256": "4082ed9cbe1fa8390a67d3dedcd712035f163c53888e2a1841da983d24b35905"
+    },
+    {
+      "canonical_url": "https://gist.github.com/RobinLinus/c9bde57d6e7eda9e447909fae35ec0b1#file-replay-protection-md",
+      "enabled": true,
+      "id": "robinlinus-gists-replay-protection-via-reserved-nlocktime-values-replay-protect-67916d72e9",
+      "local_metadata_file": "documents/robinlinus-gists/robinlinus-gists-replay-protection-via-reserved-nlocktime-values-replay-protect-67916d72e9.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "replay-protection.md",
+      "raw_file": "raw/robinlinus-gists/robinlinus-gists-replay-protection-via-reserved-nlocktime-values-replay-protect-67916d72e9.md",
+      "retrieved_at": "2026-08-24T21:53:25Z",
+      "revision": "4c803dd8892811acafd3ccf408dbf8a95aa0b21d",
+      "sha256": "a1236e951de0965c7d82ba2b10dadfbdb63aeb7c493b6fcdfee4287006294e60"
+    },
+    {
+      "canonical_url": "https://gist.github.com/RobinLinus/3c9c91f701a420c13f90b1c70616e77a#file-thikcs-subchains-md",
+      "enabled": true,
+      "id": "robinlinus-gists-subchains-an-embedded-blockchain-whose-blocks-are-published-in-209b0fa4ad",
+      "local_metadata_file": "documents/robinlinus-gists/robinlinus-gists-subchains-an-embedded-blockchain-whose-blocks-are-published-in-209b0fa4ad.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "path": "thikcs-subchains.md",
+      "raw_file": "raw/robinlinus-gists/robinlinus-gists-subchains-an-embedded-blockchain-whose-blocks-are-published-in-209b0fa4ad.md",
+      "retrieved_at": "2026-08-24T21:53:25Z",
+      "revision": "94dd8f6b11a335201f08cb9bbb2a67b9a0592f3e",
+      "sha256": "680e9b7c3898a56254d55b7be15066bc8a6860aaa9771b92c3c535c29946ccc3"
+    }
+  ],
+  "homepage": "https://gist.github.com/robinLinus",
+  "id": "robinlinus-gists",
+  "ingestion": {
+    "discovery_urls": [
+      "https://api.github.com/users/robinLinus/gists?per_page=20&page=1"
+    ],
+    "expected_formats": [
+      "application/vnd.github+json",
+      "text/plain",
+      "source-code"
+    ],
+    "mode": "registry-fetcher",
+    "notes": "Incremental snapshot managed by scripts/ingest_sources.py; see library/ingestion/latest-report.json.",
+    "status": "ingested"
+  },
+  "rights": {
+    "policy": "Public gists have no implied license; no redistribution license is asserted unless an individual gist says otherwise."
+  },
+  "schema_version": "1.0.0",
+  "source_name": "Robin Linus public GitHub gists"
+}

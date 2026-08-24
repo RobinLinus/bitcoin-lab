@@ -1,0 +1,29 @@
+[
+  {
+    "name": "addition equality",
+    "unlocking_script": "2 3 OP_ADD",
+    "locking_script": "5 OP_EQUAL",
+    "expected": true
+  },
+  {
+    "name": "sha256 preimage",
+    "unlocking_script": "0x68656c6c6f",
+    "locking_script": "OP_SHA256 0x2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824 OP_EQUAL",
+    "expected": true
+  },
+  {
+    "name": "equalverify failure",
+    "unlocking_script": "2",
+    "locking_script": "3 OP_EQUALVERIFY 1",
+    "expected": false,
+    "error_contains": "OP_EQUALVERIFY failed"
+  },
+  {
+    "name": "negative zero is false",
+    "unlocking_script": "0x80",
+    "locking_script": "",
+    "expected": false,
+    "error_contains": "final stack value is false"
+  }
+]
+

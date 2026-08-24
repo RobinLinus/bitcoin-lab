@@ -1,0 +1,11 @@
+.git
+.gitignore
+.DS_Store
+api.key
+.env
+.env.*
+data
+__pycache__
+*.py[cod]
+tests
+

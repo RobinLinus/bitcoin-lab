@@ -1,0 +1,48 @@
+services:
+  bitcoin-core:
+    image: bitcoin/bitcoin:31.1
+    command:
+      - -regtest=1
+      - -server=1
+      - -printtoconsole=1
+      - -rpcbind=0.0.0.0
+      - -rpcallowip=0.0.0.0/0
+      - -rpcuser=lab
+      - -rpcpassword=lab-regtest-only
+      - -fallbackfee=0.0002
+    volumes:
+      - bitcoin-data:/home/bitcoin/.bitcoin
+    healthcheck:
+      test: ["CMD", "bitcoin-cli", "-regtest", "-rpcuser=lab", "-rpcpassword=lab-regtest-only", "getblockchaininfo"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+    restart: unless-stopped
+
+  lab:
+    build:
+      context: .
+    ports:
+      - "${LAB_PORT:-8080}:8080"
+    environment:
+      LAB_LIBRARY_PATH: /app/library
+      LAB_INDEX_PATH: /data/library.db
+      BITCOIN_RPC_URL: http://bitcoin-core:18443
+      BITCOIN_RPC_USER: lab
+      BITCOIN_RPC_PASSWORD: lab-regtest-only
+      BITCOIN_LAB_URL: http://127.0.0.1:8080/api/v1
+      OPENCODE_CONFIG: /app/opencode.json
+    depends_on:
+      bitcoin-core:
+        condition: service_healthy
+    volumes:
+      - ./library:/app/library:ro
+      - lab-data:/data
+      - opencode-data:/home/lab/.local/share/opencode
+    restart: unless-stopped
+
+volumes:
+  bitcoin-data:
+  lab-data:
+  opencode-data:

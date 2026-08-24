@@ -1,0 +1,44 @@
+{
+  "abstract": "Fairgate | Fairgate - Garbled Circuits Source: https://www.fairgate.io/resources/garbled-circuits Retrieved: 2026-08-24T21:53:00Z --- Products Bit2 Portfolio Services Case Studies Partners Technology BitVMX Platform Build Knowledge Blog Publications Resource Hub Newsletters Company About Press Room Careers Bit2 Services Case Studies Partners BitVMX Platform Build Blog Publications Resource Hub Newsletters About Press Careers Resources \u00bb Garbled Circuits \u25b6 \u2591 Paper OHMG: One Hot Modular Garbling \u2591 Articles Security of RSA-based garbling schemes Security of the BitVM3 garbling scheme \u2591 Presentati",
+  "authors": [
+    "Fairgate"
+  ],
+  "bitcoin_topics": [
+    "BitVMX",
+    "BitVM",
+    "bridges"
+  ],
+  "canonical_url": "https://www.fairgate.io/resources/garbled-circuits",
+  "collection": "fairgate",
+  "content_file": "fairgate-fairgate-fairgate-garbled-circuits-8faefb36c7.md",
+  "id": "fairgate-fairgate-fairgate-garbled-circuits-8faefb36c7",
+  "license": "Public resources remain copyrighted by Fairgate or named authors unless an item states a license. No redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public resources remain copyrighted by Fairgate or named authors unless an item states a license. No redistribution license is asserted."
+  },
+  "published_at": "2025-03-04",
+  "retrieval": {
+    "content_type": "text/html",
+    "fetched_url": "https://fairgate.io/resources/garbled-circuits",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/fairgate/fairgate-fairgate-fairgate-garbled-circuits-8faefb36c7.html",
+    "retrieved_at": "2026-08-24T21:53:00Z",
+    "sha256": "19de257b98d6ca7bbcd6c427423155dd0d45958ff14a95e3e53a4a69ec0ea44c"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/fairgate.json",
+  "source_type": "article",
+  "tags": [
+    "fairgate",
+    "bitcoin-research",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Fairgate | Fairgate - Garbled Circuits"
+}

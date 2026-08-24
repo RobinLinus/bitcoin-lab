@@ -1,0 +1,226 @@
+{
+  "failed_sources": [],
+  "fetched_documents": 51,
+  "fetcher_version": "1.0.0",
+  "finished_at": "2026-08-24T21:53:44Z",
+  "no_item_sources": [],
+  "registry": "library/source-registry.json",
+  "schema_version": "1.0.0",
+  "source_count": 10,
+  "sources": [
+    {
+      "boundary": "The archive spans many years. Each run discovers only the archive index and fetches at most eight linked public messages; this is intentionally not a bulk email mirror.",
+      "cap": 6,
+      "discovered": 67,
+      "discovery_content_type": "text/html",
+      "discovery_links": 69,
+      "discovery_status": 200,
+      "errors": [],
+      "fetched": 6,
+      "finished_at": "2026-08-24T21:52:39Z",
+      "id": "bitcoin-mailing-lists",
+      "rights_policy": "Public author-owned correspondence; retain source attribution and canonical archive URL. No redistribution license is asserted.",
+      "robots": {
+        "gnusha.org": "loaded:200"
+      },
+      "skipped": [],
+      "started_at": "2026-08-24T21:52:29Z",
+      "status": "ok",
+      "strategy": "html-links"
+    },
+    {
+      "boundary": "The full Discourse archive is large and mutable. A run ingests at most ten topics from the public latest-topic API, including their public posts.",
+      "cap": 6,
+      "discovered": 30,
+      "discovery_content_type": "application/json",
+      "discovery_status": 200,
+      "errors": [],
+      "fetched": 6,
+      "finished_at": "2026-08-24T21:52:50Z",
+      "id": "delving-bitcoin",
+      "rights_policy": "Public forum posts remain author-owned unless a post states otherwise. Store a local research snapshot with attribution; no redistribution license is asserted.",
+      "robots": {
+        "delvingbitcoin.org": "loaded:200"
+      },
+      "skipped": [],
+      "started_at": "2026-08-24T21:52:39Z",
+      "status": "ok",
+      "strategy": "discourse-latest"
+    },
+    {
+      "boundary": "Only same-site research links exposed by the public landing page and two known public paper URLs are considered, capped at ten items.",
+      "cap": 6,
+      "discovered": 3,
+      "discovery_content_type": "text/html",
+      "discovery_links": 45,
+      "discovery_status": 200,
+      "errors": [],
+      "fetched": 3,
+      "finished_at": "2026-08-24T21:53:00Z",
+      "id": "robinlinus",
+      "rights_policy": "Public research material remains copyrighted by its authors unless the source states a license. The snapshot records attribution and does not assert redistribution rights.",
+      "robots": {
+        "robinlinus.com": "missing:404-allow"
+      },
+      "skipped": [],
+      "started_at": "2026-08-24T21:52:50Z",
+      "status": "ok",
+      "strategy": "html-links"
+    },
+    {
+      "boundary": "The public resource hub is sampled to at most ten same-site resources per run; external links and marketing pages are excluded.",
+      "cap": 6,
+      "discovered": 4,
+      "discovery_content_type": "text/html",
+      "discovery_links": 266,
+      "discovery_status": 200,
+      "errors": [],
+      "fetched": 4,
+      "finished_at": "2026-08-24T21:53:09Z",
+      "id": "fairgate",
+      "rights_policy": "Public resources remain copyrighted by Fairgate or named authors unless an item states a license. No redistribution license is asserted.",
+      "robots": {
+        "fairgate.io": "loaded:200"
+      },
+      "skipped": [],
+      "started_at": "2026-08-24T21:53:00Z",
+      "status": "ok",
+      "strategy": "html-links"
+    },
+    {
+      "boundary": "The official blog contains research and non-research material. The fetcher takes at most ten public blog posts and records that topical review is still required.",
+      "cap": 6,
+      "discovered": 22,
+      "discovery_content_type": "text/html",
+      "discovery_links": 76,
+      "discovery_status": 200,
+      "errors": [],
+      "fetched": 6,
+      "finished_at": "2026-08-24T21:53:18Z",
+      "id": "alpen",
+      "rights_policy": "Public articles remain copyrighted by Alpen Labs or named authors unless an item states a license. No redistribution license is asserted.",
+      "robots": {
+        "www.alpen.org": "loaded:200"
+      },
+      "skipped": [],
+      "started_at": "2026-08-24T21:53:09Z",
+      "status": "ok",
+      "strategy": "html-links"
+    },
+    {
+      "boundary": "The site and documentation set are broad. Three public papers are pinned and official blog discovery is capped so a run fetches at most ten items.",
+      "cap": 6,
+      "discovered": 104,
+      "discovery_content_type": "text/html",
+      "discovery_links": 203,
+      "discovery_status": 200,
+      "errors": [],
+      "fetched": 2,
+      "finished_at": "2026-08-24T21:53:22Z",
+      "id": "babylon",
+      "rights_policy": "Public papers and articles remain copyrighted by Babylon Labs or named authors unless an item states a license. No redistribution license is asserted.",
+      "robots": {
+        "babylonlabs.io": "loaded:200",
+        "docs.babylonlabs.io": "denied:URLError"
+      },
+      "skipped": [
+        {
+          "reason": "PermissionError: robots denied https://docs.babylonlabs.io/papers/btc_staking_litepaper.pdf (denied:URLError)",
+          "url": "https://docs.babylonlabs.io/papers/btc_staking_litepaper.pdf"
+        },
+        {
+          "reason": "PermissionError: robots denied https://docs.babylonlabs.io/papers/BABE_Research_Paper_Jan_2026.pdf (denied:URLError)",
+          "url": "https://docs.babylonlabs.io/papers/BABE_Research_Paper_Jan_2026.pdf"
+        },
+        {
+          "reason": "PermissionError: robots denied https://docs.babylonlabs.io/papers/trustless-bitcoin-vaults.pdf (denied:URLError)",
+          "url": "https://docs.babylonlabs.io/papers/trustless-bitcoin-vaults.pdf"
+        },
+        {
+          "reason": "PermissionError: robots denied https://docs.babylonlabs.io/papers/btc_staking_litepaper(EN).pdf (denied:URLError)",
+          "url": "https://docs.babylonlabs.io/papers/btc_staking_litepaper(EN).pdf"
+        }
+      ],
+      "started_at": "2026-08-24T21:53:18Z",
+      "status": "ok",
+      "strategy": "html-links"
+    },
+    {
+      "boundary": "Only documentation, license material, and text source/script files are considered, capped at thirty files; Git history and binary artifacts are excluded.",
+      "cap": 6,
+      "discovered": 27,
+      "errors": [],
+      "fetched": 6,
+      "finished_at": "2026-08-24T21:53:24Z",
+      "id": "bitcoin-scripts",
+      "license_files": [],
+      "matched_files": 27,
+      "pinned_commit": "8f442e4bf8a744dd9bf69b2937bdebcaed5cae77",
+      "repository": "https://github.com/coins/bitcoin-scripts.git",
+      "rights_policy": "No repository LICENSE or COPYING file was detected at the pinned commit. No reuse or redistribution license is asserted; individual file notices, if any, continue to apply.",
+      "robots": {},
+      "skipped": [],
+      "started_at": "2026-08-24T21:53:22Z",
+      "status": "ok",
+      "strategy": "git-repository"
+    },
+    {
+      "boundary": "Only scripts/opcodes plus top-level documentation/license files are considered, capped at forty files; the rest of bitvm-js and Git history are excluded.",
+      "cap": 6,
+      "discovered": 28,
+      "errors": [],
+      "fetched": 6,
+      "finished_at": "2026-08-24T21:53:25Z",
+      "id": "bitvm-opcodes",
+      "license_files": [],
+      "matched_files": 28,
+      "pinned_commit": "b931a6711ab332fd5923e708c869bed02e39984e",
+      "repository": "https://github.com/BitVM/bitvm-js.git",
+      "rights_policy": "No repository LICENSE or COPYING file was detected at the pinned commit. No reuse or redistribution license is asserted; individual file notices, if any, continue to apply.",
+      "robots": {},
+      "skipped": [],
+      "started_at": "2026-08-24T21:53:24Z",
+      "status": "ok",
+      "strategy": "git-repository"
+    },
+    {
+      "boundary": "At most ten current public gists and twenty total files are fetched through the unauthenticated public GitHub API; history beyond the pinned current revision is not mirrored.",
+      "cap": 6,
+      "discovered": 20,
+      "discovered_gists": 20,
+      "errors": [],
+      "fetched": 6,
+      "finished_at": "2026-08-24T21:53:35Z",
+      "github_rate_limit_remaining": "59",
+      "id": "robinlinus-gists",
+      "rights_policy": "Public gists have no implied open-source license. Preserve author, canonical gist URL, revision, and filename; no redistribution license is asserted unless a gist states one.",
+      "robots": {},
+      "selected_gists": 10,
+      "skipped": [],
+      "started_at": "2026-08-24T21:53:25Z",
+      "status": "ok",
+      "strategy": "github-gists"
+    },
+    {
+      "boundary": "Documentation is broad and changes over time. Only twelve same-host pages linked directly from the public documentation entry page are retained per run.",
+      "cap": 6,
+      "discovered": 46,
+      "discovery_content_type": "text/html",
+      "discovery_links": 61,
+      "discovery_status": 200,
+      "errors": [],
+      "fetched": 6,
+      "finished_at": "2026-08-24T21:53:44Z",
+      "id": "citrea-docs",
+      "rights_policy": "Public documentation remains copyrighted by Citrea or named authors unless a page states a license. No redistribution license is asserted.",
+      "robots": {
+        "docs.citrea.xyz": "loaded:200"
+      },
+      "skipped": [],
+      "started_at": "2026-08-24T21:53:35Z",
+      "status": "ok",
+      "strategy": "html-links"
+    }
+  ],
+  "started_at": "2026-08-24T21:52:29Z"
+}

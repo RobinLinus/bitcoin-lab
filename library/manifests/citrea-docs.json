@@ -1,0 +1,84 @@
+{
+  "collection": "citrea-docs",
+  "description": "Bounded robots-aware public documentation snapshot from Citrea's official documentation site.",
+  "entries": [
+    {
+      "canonical_url": "https://docs.citrea.xyz/essentials/architecture-and-transaction-lifecycle",
+      "enabled": true,
+      "id": "citrea-docs-architecture-and-transaction-lifecycle-citrea-903e8f0850",
+      "local_metadata_file": "documents/citrea-docs/citrea-docs-architecture-and-transaction-lifecycle-citrea-903e8f0850.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/citrea-docs/citrea-docs-architecture-and-transaction-lifecycle-citrea-903e8f0850.html",
+      "retrieved_at": "2026-08-24T21:53:35Z",
+      "sha256": "e623fe1ff197d635122adfba51299aabf8a7ee9a3cbddce36cd2251bc004be79"
+    },
+    {
+      "canonical_url": "https://docs.citrea.xyz/welcome/bridge-to-citrea",
+      "enabled": true,
+      "id": "citrea-docs-bridge-to-citrea-citrea-d6ddd0c325",
+      "local_metadata_file": "documents/citrea-docs/citrea-docs-bridge-to-citrea-citrea-d6ddd0c325.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/citrea-docs/citrea-docs-bridge-to-citrea-citrea-d6ddd0c325.html",
+      "retrieved_at": "2026-08-24T21:53:35Z",
+      "sha256": "15190f78926f22a690c2410c488f29c8382296ed91e13ddb194c8bba4237778c"
+    },
+    {
+      "canonical_url": "https://docs.citrea.xyz/welcome/chain-information-quickstart",
+      "enabled": true,
+      "id": "citrea-docs-chain-information-quickstart-citrea-13af1b81d3",
+      "local_metadata_file": "documents/citrea-docs/citrea-docs-chain-information-quickstart-citrea-13af1b81d3.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/citrea-docs/citrea-docs-chain-information-quickstart-citrea-13af1b81d3.html",
+      "retrieved_at": "2026-08-24T21:53:35Z",
+      "sha256": "b0ce40b6ae4e0a8652e5976b3684404b1d1d0c544aabdfcf1f91c87c041c9da1"
+    },
+    {
+      "canonical_url": "https://docs.citrea.xyz/essentials/clementine-trust-minimized-bitcoin-bridge",
+      "enabled": true,
+      "id": "citrea-docs-clementine-trust-minimized-bitcoin-bridge-citrea-ca3e109da4",
+      "local_metadata_file": "documents/citrea-docs/citrea-docs-clementine-trust-minimized-bitcoin-bridge-citrea-ca3e109da4.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/citrea-docs/citrea-docs-clementine-trust-minimized-bitcoin-bridge-citrea-ca3e109da4.html",
+      "retrieved_at": "2026-08-24T21:53:35Z",
+      "sha256": "cb85d1fda1820d9f990975ee5e946cdeb25aa4401543c3526828a415b31b4761"
+    },
+    {
+      "canonical_url": "https://docs.citrea.xyz/essentials/introduction",
+      "enabled": true,
+      "id": "citrea-docs-tl-dr-citrea-c08e3174d5",
+      "local_metadata_file": "documents/citrea-docs/citrea-docs-tl-dr-citrea-c08e3174d5.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/citrea-docs/citrea-docs-tl-dr-citrea-c08e3174d5.html",
+      "retrieved_at": "2026-08-24T21:53:35Z",
+      "sha256": "d2444cc6d7e4cfc742339e472ed5789992e88e84f7eba6072c2d85fee2ee97ea"
+    },
+    {
+      "canonical_url": "https://docs.citrea.xyz/essentials/using-clementine",
+      "enabled": true,
+      "id": "citrea-docs-using-clementine-citrea-52a1938435",
+      "local_metadata_file": "documents/citrea-docs/citrea-docs-using-clementine-citrea-52a1938435.metadata.json",
+      "managed_by": "scripts/ingest_sources.py",
+      "raw_file": "raw/citrea-docs/citrea-docs-using-clementine-citrea-52a1938435.html",
+      "retrieved_at": "2026-08-24T21:53:35Z",
+      "sha256": "6b93739c80593ae20500b7338e21cee1f537776d3abe732b8e10ab83a2f9e562"
+    }
+  ],
+  "homepage": "https://docs.citrea.xyz/",
+  "id": "citrea-docs",
+  "ingestion": {
+    "discovery_urls": [
+      "https://docs.citrea.xyz/"
+    ],
+    "expected_formats": [
+      "text/html"
+    ],
+    "mode": "registry-fetcher",
+    "notes": "Incremental snapshot managed by scripts/ingest_sources.py; see library/ingestion/latest-report.json.",
+    "status": "ingested"
+  },
+  "rights": {
+    "policy": "Source copyright is retained; no redistribution license is asserted."
+  },
+  "schema_version": "1.0.0",
+  "source_name": "Citrea documentation"
+}

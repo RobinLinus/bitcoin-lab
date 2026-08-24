@@ -1,0 +1,45 @@
+{
+  "abstract": "public-inbox help for https://gnusha.org/pi/bitcoindev/ Source: https://gnusha.org/pi/bitcoindev/ /text/help/ Retrieved: 2026-08-24T21:52:29Z --- public inbox for bitcoindev@googlegroups.com help / color / mirror / Atom feed public-inbox help for https://gnusha.org/pi/bitcoindev/ overview -------- public-inbox uses Message-ID identifiers in URLs. One may look up messages by substituting Message-IDs without the leading '<' or trailing ' ' into the URL. Forward slash '/' characters in the Message-IDs need to be escaped as \"%2F\" without quotes . Thus, it is possible to retrieve any message by its",
+  "authors": [
+    "Bitcoin development mailing lists"
+  ],
+  "bitcoin_topics": [
+    "protocol-development",
+    "consensus",
+    "relay-policy"
+  ],
+  "canonical_url": "https://gnusha.org/pi/bitcoindev/_/text/help/",
+  "collection": "mailing-lists",
+  "content_file": "bitcoin-mailing-lists-public-inbox-help-for-https-gnusha-org-pi-bitcoindev-479b702cb1.md",
+  "id": "bitcoin-mailing-lists-public-inbox-help-for-https-gnusha-org-pi-bitcoindev-479b702cb1",
+  "license": "Public author-owned correspondence; retain source attribution and canonical archive URL. No redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public author-owned correspondence; retain source attribution and canonical archive URL. No redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "text/html",
+    "fetched_url": "https://gnusha.org/pi/bitcoindev/_/text/help/",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/bitcoin-mailing-lists/bitcoin-mailing-lists-public-inbox-help-for-https-gnusha-org-pi-bitcoindev-479b702cb1.html",
+    "retrieved_at": "2026-08-24T21:52:29Z",
+    "sha256": "a8a007a9c627f2cce17b505b8a71d97e0ab2ad511b26f77b943589132d67a07d"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/bitcoin-mailing-lists.json",
+  "source_type": "mailing-list-thread",
+  "tags": [
+    "bitcoin-dev",
+    "mailing-list",
+    "protocol-development",
+    "public-source",
+    "ingested"
+  ],
+  "title": "public-inbox help for https://gnusha.org/pi/bitcoindev/"
+}

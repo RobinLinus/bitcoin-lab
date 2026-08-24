@@ -1,0 +1,44 @@
+{
+  "abstract": "Expanding Alpen\u2019s independent operator set for mainnet",
+  "authors": [
+    "Alpen Labs research"
+  ],
+  "bitcoin_topics": [
+    "Bitcoin-rollups",
+    "zero-knowledge-proofs",
+    "verification"
+  ],
+  "canonical_url": "https://www.alpen.org/blog/chainflow-joins-alpen-as-an-independent-operator",
+  "collection": "alpen",
+  "content_file": "alpen-chainflow-joins-alpen-as-an-independent-operator-0d9d2cf643.md",
+  "id": "alpen-chainflow-joins-alpen-as-an-independent-operator-0d9d2cf643",
+  "license": "Public articles remain copyrighted by Alpen Labs or named authors unless an item states a license. No redistribution license is asserted.",
+  "provenance": {
+    "content_kind": "source-text",
+    "is_sample": false,
+    "notes": "Incremental bounded ingestion; see library/source-registry.json and library/ingestion/latest-report.json.",
+    "source_license": "Public articles remain copyrighted by Alpen Labs or named authors unless an item states a license. No redistribution license is asserted."
+  },
+  "published_at": "2026-08-24",
+  "retrieval": {
+    "content_type": "text/html",
+    "fetched_url": "https://www.alpen.org/blog/chainflow-joins-alpen-as-an-independent-operator",
+    "fetcher_version": "1.0.0",
+    "http_status": 200,
+    "method": "public-http",
+    "raw_file": "raw/alpen/alpen-chainflow-joins-alpen-as-an-independent-operator-0d9d2cf643.html",
+    "retrieved_at": "2026-08-24T21:53:09Z",
+    "sha256": "c94c76c1a0941af4eed4c8b210cc28036375735f4cf663a1c34d3a870f6454c4"
+  },
+  "retrieved_at": "2026-08-24",
+  "schema_version": "1.0.0",
+  "source_manifest": "manifests/alpen.json",
+  "source_type": "article",
+  "tags": [
+    "alpen-labs",
+    "bitcoin-research",
+    "public-source",
+    "ingested"
+  ],
+  "title": "Chainflow joins Alpen as an independent operator"
+}
