@@ -164,7 +164,7 @@ This first release has bounded rather than exhaustive public-source coverage, le
     - Library of Bitcoin Script primitives
     - Library of Bitcoin research (Papers, mailing list, Bitcoin Talk, Delving Bitcoin, https://en.bitcoin.it/wiki/Script, ... )
     - Library of Cryptography research (cryptography expert agent, Dan's cryptography book, cryptology eprint, consensus papers, ...)
-        - https://mcp.so/servers/doomdagadiggiedahdah_iacr-mcp-server
+        - [https://mcp.so/servers/doomdagadiggiedahdah_iacr-mcp-server](https://github.com/heewon-chung/eprint-mcp-server)
         - [https://deepakness.com/raw/arxiv-mcp/](https://www.alphaxiv.org/docs/mcp)
     - Bitcoin Knowledge base MCP https://bitcoinknowledge.dev
     - Literature research agent 
