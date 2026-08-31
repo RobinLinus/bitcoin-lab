@@ -155,3 +155,21 @@ docker compose config --quiet
 ```
 
 This first release has bounded rather than exhaustive public-source coverage, lexical retrieval rather than embeddings, no bundled language model, and no production authentication. Script evaluation uses a synthetic legacy transaction and `VERIFY_ALL_PRE_TAPROOT`; it does not yet accept witness data or arbitrary transaction context. Add authentication and network policy before exposing the API beyond a developer machine.
+
+
+
+
+## Tools 
+- Knowledge Base 
+    - Library of Bitcoin Script primitives
+    - Library of Bitcoin research (Papers, mailing list, Bitcoin Talk, Delving Bitcoin, https://en.bitcoin.it/wiki/Script, ... )
+    - Library of Cryptography research (cryptography expert agent, Dan's cryptography book, cryptology eprint, consensus papers, ...)
+        - https://mcp.so/servers/doomdagadiggiedahdah_iacr-mcp-server
+        - https://deepakness.com/raw/arxiv-mcp/
+    - Bitcoin Knowledge base MCP https://bitcoinknowledge.dev
+    - Literature research agent 
+    - Bitcoin Core Code for exact protocol reference 
+- Experiments
+    - Script interpreter for testing
+    - Rust Bitcoin     
+    - Regtest node for testing
